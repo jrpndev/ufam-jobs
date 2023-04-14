@@ -1,0 +1,22 @@
+.nav{
+    background-color: #120A8F;
+    color: white;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+.nav-left{
+    margin-left: 2rem;
+    align-items: center;
+}
+.nav-right{
+    justify-content: flex-end;
+    width:100%;
+    display: flex;
+    flex-direction: row;   
+}
+.nav-right-element{
+    cursor: pointer;
+    width: 5rem;
+    margin: 10px;
+}
