@@ -1,3 +1,16 @@
 <app-nav-bar></app-nav-bar>
-<p>home-page works!</p>
-<button (click)="writeErr()">Clica</button>
+<div class="home-page-container">
+    <div class="nav-search-input">
+            <mat-form-field class="example-full-width">
+              <input matInput  = "search-input" placeholder="Ex. Programador">
+            </mat-form-field>
+            <div class="nav-search-icon">
+                <img src="/assets/search-icon-material.svg" alt="" (click)="searchContent()">
+            </div>
+    </div>
+    <div class="home-page-content">
+        <div class="home-page-data">
+            
+        </div>
+    </div>
+</div>

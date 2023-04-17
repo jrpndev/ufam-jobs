@@ -1,0 +1,17 @@
+.home-page-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.nav-search-input{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+.example-full-width{
+    width: 30rem;
+}
+.nav-search-icon img{
+    cursor: pointer;
+}

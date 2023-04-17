@@ -20,4 +20,7 @@ export class HomePageComponent {
   writeErr(){
     return this.http.post<any>("http://localhost:4200/logs/logData.json",this.data).subscribe(err=>console.log(err))
   }
+  searchContent(){
+    
+  }
 }
