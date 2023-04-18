@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="login-box">
+        <div class="login-title">
+            <button mat-button color="primary" class="mat-button--basic" (click)="goBack()">
+                <mat-icon>arrow_back</mat-icon>
+                Voltar
+            </button>
+            <mat-card-title>UFAM JOBS</mat-card-title>
+        </div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Nome da Empresa : </mat-label>
+            <input matInput required>
+        </mat-form-field>
+        <div class="input-type-name">
+            <div class="input-type-name-element">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Rua</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+            </div>
+            <div class="input-type-name-element">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Bairro</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="input-type-name">
+            <div class="input-type-name-element">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Nº:</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+            </div>
+            <mat-form-field class="example-full-width">
+                <mat-label>CEP</mat-label>
+                <input matInput required>
+            </mat-form-field>
+        </div>
+        <mat-form-field class="example-full-width example-full-size">
+            <mat-label>Email</mat-label>
+            <input matInput required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Telefone</mat-label>
+            <input matInput required>
+        </mat-form-field>
+        <div class="input-type-name">
+            <div class="input-type-name-element">
+                <mat-form-field class="example-full-width">
+                    <mat-label>CNPJ</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+            </div>
+            <div class="input-type-name-element">
+                <mat-form-field appearance="fill">
+                    <mat-label>Nacionalidade</mat-label>
+                    <select matNativeControl required autofocus>
+                        <option value="br">Brasileira</option>
+                        <option value="es">Estrangeira</option>
+                    </select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="login-box-submit">
+            <button mat-raised-button color="primary" (click)="goHome()">Concluir</button>
+        </div>
+    </div>
+</div>

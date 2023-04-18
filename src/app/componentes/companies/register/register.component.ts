@@ -7,12 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-
-  constructor(private route : Router){}
-  goBack(){
+  constructor(private route: Router) { }
+  goBack() {
     this.route.navigate(['login'])
   }
-  goHome(){
+  goHome() {
     this.route.navigate(['/']);
   }
 }

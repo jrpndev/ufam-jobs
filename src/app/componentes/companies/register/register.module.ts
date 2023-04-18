@@ -10,6 +10,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatSelectModule} from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     RegisterComponent
@@ -27,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatCardModule,
     MatIconModule
+    
   ]
 })
 export class RegisterModule { }

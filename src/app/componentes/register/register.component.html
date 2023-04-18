@@ -1,22 +1,20 @@
 <div class="container">
     <div class="login-box">
         <div class="login-title">
+            <button mat-button color = "primary" class="mat-button--basic" (click)="goBack()">
+                <mat-icon>arrow_back</mat-icon>
+                Voltar
+            </button>
             <mat-card-title>UFAM JOBS</mat-card-title>
         </div>
-        <div class="input-type-name">
-            <div class="input-type-name-element">
-                <mat-form-field class="example-full-width">
-                    <mat-label>Nome</mat-label>
-                    <input matInput required>
-                </mat-form-field>
-            </div>
-            <div class="input-type-name-element">
-                <mat-form-field class="example-full-width">
-                    <mat-label>Sobrenome</mat-label>
-                    <input matInput required>
-                </mat-form-field>
-            </div>
-        </div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Nome</mat-label>
+            <input matInput required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput required>
+        </mat-form-field>
         <mat-form-field class="example-full-width example-full-size">
             <mat-label>Email</mat-label>
             <input matInput required>
@@ -30,8 +28,8 @@
             </div>
             <div class="input-type-name-element">
                 <mat-form-field appearance="fill">
-                    <mat-label>Gender</mat-label>
-                    <select matNativeControl required>
+                    <mat-label>Sexo</mat-label>
+                    <select matNativeControl required autofocus>
                         <option value="M">Masculino</option>
                         <option value="F">Feminino</option>
                     </select>
@@ -56,7 +54,7 @@
             </div>
         </div>
         <div class="login-box-submit">
-            <button mat-raised-button color="primary">Entrar</button>
+            <button mat-raised-button color="primary" (click)="goHome()">Concluir</button>
         </div>
     </div>
 </div>
