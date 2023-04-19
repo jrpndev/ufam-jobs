@@ -14,7 +14,11 @@
         <button mat-raised-button color="primary" (click)="login()">Entrar</button>
         <div class="login-footer">
             <label>Esqueceu sua senha? clique aqui</label>
-            <button mat-raised-button color="primary" (click)="register()">Cadastrar</button>
+            <label for="">Criar conta : </label>
+            <div class="login-create-account-btn">
+                <button mat-raised-button color="primary" (click)="companiesRegister()">Corporativa</button>
+                <button mat-raised-button color="primary" (click)="register()">Profissional</button>
+            </div>
         </div>
     </div>
 </div>

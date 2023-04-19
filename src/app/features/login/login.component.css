@@ -43,3 +43,11 @@ mat-card-title{
     margin-top: 1rem;
     width: 6rem;
 }
+.login-create-account-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.login-create-account-btn button{
+    margin-left: 0.5rem;
+}

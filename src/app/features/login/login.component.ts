@@ -17,4 +17,7 @@ export class LoginComponent implements OnInit {
   register(){
     this.route.navigate(['register'])
   }
+  companiesRegister =()=>{
+    this.route.navigate(['enterpriseregister'])
+  }
 }
