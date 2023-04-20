@@ -8,5 +8,6 @@ export interface Enterprise{
     phone : string,
     cnpj : string,
     nacionality : string,
-    email : string
+    email : string,
+    password : string,
 }

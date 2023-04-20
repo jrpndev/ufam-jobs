@@ -1,19 +1,24 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { MatDateRangePicker, MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
+import { ToolsService } from 'src/app/services/tools.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  user : User = {
+  baseUrl = "http://localhost:3001/users"
+
+  user: User = {
     firstName: "",
     surname: "",
     mat: "",
     street: "",
     neigh: "",
+    cep: "",
     number: "",
     course: "",
     description: "",
@@ -21,16 +26,27 @@ export class RegisterComponent {
     cpf: "",
     gender: "",
     email: "",
-    date: null
+    date: null,
+    password: ''
   }
-  constructor(private route : Router){}
-  goBack(){
+  constructor(private route: Router, private http: HttpClient, private tools: ToolsService) { }
+  goBack() {
     this.route.navigate(['login'])
   }
-  goHome(){
+  goHome() {
     this.route.navigate(['/']);
   }
-  onDateInput(event : MatDatepickerInputEvent<Date>){
+  onDateInput(event: MatDatepickerInputEvent<Date>) {
     this.user.date = event.value;
+  }
+  createUser(): void {
+    if (this.tools.validateInputs(this.user)) {
+      this.http.post<User>(this.baseUrl, this.user).subscribe(() => {
+        this.tools.showAlert('Usuário cadastrado com sucesso', 'Sucesso!');
+        this.goBack();
+      });
+    } else {
+      this.tools.showAlert('Há campos a serem preenchidos', 'Erro!');
+    }
   }
 }

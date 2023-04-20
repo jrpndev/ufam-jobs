@@ -5,11 +5,11 @@
         </div>
         <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
-            <input matInput required>
+            <input [ngModel]="user.email" matInput required >
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Senha</mat-label>
-            <input matInput required>
+            <input matInput required [(ngModel)]="user.password">
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="login()">Entrar</button>
         <div class="login-footer">

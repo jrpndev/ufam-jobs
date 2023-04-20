@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card'
 import { LoginRoutingModule } from './login-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LoginRoutingModule } from './login-routing.module';
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    FormsModule
   ],
   exports:[
     LoginComponent

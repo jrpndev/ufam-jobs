@@ -6,11 +6,13 @@ export interface User{
     date : Date | null,
     street : string,
     neigh : string,
+    cep:string,
     number:string,
     course : string,
     description : string,
     phone : string,
     cpf : string,
     gender : string,
-    email : string
+    email : string,
+    password : string,
 }

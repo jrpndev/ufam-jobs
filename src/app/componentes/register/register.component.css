@@ -20,7 +20,7 @@
     display: flex;
     justify-content:flex-start;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 mat-card-title{
@@ -29,9 +29,11 @@ mat-card-title{
 }
 .input-type-name{
     display: flex;
+    align-items: center;
+    flex-direction: row;
 }
 .input-type-name-element{
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 .example-full-size{
     display: flex;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToolsService } from 'src/app/services/tools.service';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private route: Router) {
+
+  user = {
+    email : '',
+    password : ''
+  }
+
+  constructor(private route: Router , private tools : ToolsService) {
   }
   ngOnInit(): void {
   }
   login() {
-    this.route.navigate(['/']);
+    this.tools.checkLogin(this.user.email,this.user.password);
   }
   register(){
     this.route.navigate(['register'])
