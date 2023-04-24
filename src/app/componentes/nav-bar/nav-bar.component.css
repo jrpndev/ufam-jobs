@@ -10,13 +10,17 @@
     align-items: center;
 }
 .nav-right{
-    justify-content: flex-end;
-    width:100%;
     display: flex;
-    flex-direction: row;   
+    justify-content: flex-end;
+    width: 100%;
 }
 .nav-right-element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    width: 5rem;
-    margin: 10px;
+    width: 100px;
+    height: 30px;
+    margin: 0.5rem;
+    border-radius: 5px;
 }

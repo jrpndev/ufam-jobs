@@ -1,5 +1,5 @@
 export interface Enterprise{
-    id : number,
+    id ?: number,
     name :  string,
     street : string,
     neigh : string,

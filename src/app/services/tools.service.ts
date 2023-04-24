@@ -72,4 +72,7 @@ export class ToolsService {
   homePath() {
     this.router.navigate(['/'])
   }
+  adPath(){
+    this.router.navigate(['ad'])
+  }
 }

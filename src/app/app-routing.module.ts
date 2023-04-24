@@ -5,6 +5,8 @@ const routes: Routes = [
   ,{path : 'login', loadChildren : ()=>import('./features/login/login.module').then(m=>m.LoginModule)}
   ,{path : 'register', loadChildren : ()=>import('./componentes/register/register.module').then(m=>m.RegisterModule)}
   ,{path: 'enterpriseregister', loadChildren:()=>import('./componentes/companies/register/register.module').then(m=>m.RegisterModule)}
+  ,{path: 'ad', loadChildren:()=>import('./componentes/ads/ad/ad.module').then(m=>m.AdModule)}
+
 ];
 
 @NgModule({

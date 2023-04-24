@@ -5,6 +5,8 @@ import { HomePageRoutingModule } from './home-page-routing.module';
 import { MatInputModule } from '@angular/material/input';
 import { JobsModule } from "../layout/jobs/jobs.module";
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
     declarations: [
@@ -19,6 +21,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         MatInputModule,
         JobsModule,
         MatPaginatorModule,
+        MatButtonModule,
+        MatListModule
     ]
 })
 export class HomePageModule { }

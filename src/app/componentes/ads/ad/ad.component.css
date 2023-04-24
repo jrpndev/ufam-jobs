@@ -1,0 +1,13 @@
+.ad-form-field{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem 1rem 1rem;
+}
+.ad-form-field-button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.ad-form-field-button button{
+    margin: 1rem;
+}

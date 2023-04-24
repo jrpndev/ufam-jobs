@@ -1,0 +1,27 @@
+<app-nav-bar></app-nav-bar>
+<div class="ad-form-field">
+    <mat-form-field class="example-full-width">
+        <mat-label>Nome do anúncio</mat-label>
+        <input matInput required [(ngModel)]="ad.name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>quantidade de vagas</mat-label>
+        <input matNativeControl type="number" [(ngModel)]="ad.number">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Período</mat-label>
+        <input matInput required [(ngModel)]="ad.shift">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Salário  </mat-label>
+        <input matNativeControl type="number" [(ngModel)]="ad.wage">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Descrição da vaga</mat-label>
+        <textarea matInput rows="4" placeholder="Digite a descrição aqui" [(ngModel)]="ad.description"></textarea>
+    </mat-form-field>
+    <div class="ad-form-field-button">
+        <button mat-raised-button color="primary" (click)="createAd()">Concluir</button>
+        <button mat-raised-button color="accent">Cancelar</button>
+    </div>
+</div>
