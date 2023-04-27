@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 3001"
+    "start": "json-server --watch db.json --port 3001",
+    "send-email": "ts-node email.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "json-server": "^0.17.3"
   }
 }
