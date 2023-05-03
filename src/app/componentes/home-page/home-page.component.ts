@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ads } from 'src/app/models/ads.model';
 
@@ -9,32 +8,26 @@ import { Ads } from 'src/app/models/ads.model';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit{
 
-  private baseUrl = "https://localhost:3001/ads"
+  private baseUrl = "http://localhost:3001/ads"
 
   constructor(private http : HttpClient, private router : Router){}
+  ngOnInit(): void {
+    this.getAds();
+  }
 
   ads : Ads[] = [];
   
-  itemsPerPage : number = 10;
-
-  data : Ads[] = [];
-
-  updateData(event: any) {
-    const indiceInicial = event.pageIndex * event.pageSize;
-    const indiceFinal = indiceInicial + event.pageSize;
-    this.data = this.ads.slice(indiceInicial, indiceFinal);
-  }
   
-  getAds = () =>  {
+  getAds(){
     return this.http.get<Ads[]>(this.baseUrl).subscribe(result=>{
       this.ads = result;
-      
+      console.log(this.ads)
     })
   }
   writeErr(){
-    return this.http.post<any>("http://localhost:4200/logs/logData.json",this.data).subscribe(err=>console.log(err))
+    return this.http.post<any>("http://localhost:4200/logs/logData.json",this.ads).subscribe(err=>console.log(err))
   }
   searchContent(){
   }

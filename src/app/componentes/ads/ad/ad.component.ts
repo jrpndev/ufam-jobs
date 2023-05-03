@@ -38,4 +38,7 @@ export class AdComponent {
       this.tools.showAlert('Há campos a serem preenchidos', 'Erro!');
     }
   }
+  back(){
+    this.tools.homePath();
+  }
 }

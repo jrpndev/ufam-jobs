@@ -75,4 +75,7 @@ export class ToolsService {
   adPath(){
     this.router.navigate(['ad'])
   }
+  loginpath(){
+    this.router.navigate(['login'])
+  }
 }

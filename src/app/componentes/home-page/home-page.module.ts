@@ -7,6 +7,7 @@ import { JobsModule } from "../layout/jobs/jobs.module";
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
         HomePageComponent
     ],
     imports: [
+        CommonModule,
         NavBarModule,
         HomePageRoutingModule,
         MatInputModule,

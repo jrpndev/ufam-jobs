@@ -1,7 +1,10 @@
 .ad-form-field{
+    height: 100%;
+    width:100%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin: 1rem 1rem 1rem 1rem;
+    align-items: center;
 }
 .ad-form-field-button{
     display: flex;
@@ -10,4 +13,7 @@
 }
 .ad-form-field-button button{
     margin: 1rem;
+}
+.example-full-width{
+    width: 50%;
 }

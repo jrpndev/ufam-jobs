@@ -1,19 +1,24 @@
-<div class = "nav">
+<div class="nav">
     <div class="nav-left">
         UFAM<br>
         JOBS
     </div>
+    <div class="nav-mid">
+        <mat-form-field class="example-full-width">
+            <input matInput="search-input" placeholder="Ex. Programador">
+        </mat-form-field>
+    </div>
     <div class="nav-right">
-        <div class="nav-right-element">
+        <div class="nav-right-element" (click)="dashboard()">
             Minhas vagas
         </div>
-        <div class="nav-right-element">
+        <div class="nav-right-element"(click)="profile()">
             Perfil
         </div>
-        <div class="nav-right-element">
+        <div class="nav-right-element" (click)="config()">
             Configurações
         </div>
-        <div class="nav-right-element">
+        <div class="nav-right-element" (click)="logout()">
             Sair
         </div>
     </div>

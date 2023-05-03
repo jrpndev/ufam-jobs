@@ -1,12 +1,26 @@
 .nav{
     background-color: #120A8F;
+    width: 100%;
     color: white;
     height: 5rem;
     display: flex;
+    position: fixed;
     align-items: center;
+    justify-content: center
 }
 .nav-left{
-    margin-left: 2rem;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-mid{
+    margin-top: 1rem;
+    width: 100%;
+}
+.example-full-width{
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 .nav-right{
