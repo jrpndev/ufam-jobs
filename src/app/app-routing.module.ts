@@ -6,6 +6,7 @@ const routes: Routes = [
   ,{path : 'register', loadChildren : ()=>import('./componentes/register/register.module').then(m=>m.RegisterModule)}
   ,{path: 'enterpriseregister', loadChildren:()=>import('./componentes/companies/register/register.module').then(m=>m.RegisterModule)}
   ,{path: 'ad', loadChildren:()=>import('./componentes/ads/ad/ad.module').then(m=>m.AdModule)}
+  ,{path:'currentad/:id', loadChildren:()=>import('./componentes/ads/ads-description/ads-description.module').then(m=>m.AdsDescriptionModule)}
 
 ];
 

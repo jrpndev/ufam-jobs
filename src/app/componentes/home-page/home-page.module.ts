@@ -8,6 +8,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
     declarations: [
@@ -17,6 +19,8 @@ import { CommonModule } from '@angular/common';
         HomePageComponent
     ],
     imports: [
+        MatFormFieldModule,
+        FormsModule,
         CommonModule,
         NavBarModule,
         HomePageRoutingModule,

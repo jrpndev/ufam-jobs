@@ -3,8 +3,13 @@
   <div class="set-new-ad">
     <button mat-raised-button color="primary" (click)="adPath()">Criar anúncio</button>
   </div>
+  <div class="home-page-search">
+    <mat-form-field class="example-full-width">
+      <input matInput="" class="search-input" [(ngModel)]="text" placeholder="Ex. Programador" (keyup)="searchContentData()">
+    </mat-form-field>
+  </div>
   <div class="ufam-ads">
-    <div *ngFor="let item of ads" class="ufam-ad-card">
+    <div (click)="currentAd(item.id)" *ngFor="let item of filteredAd" class="ufam-ad-card">
       <div class="ufam-card-ad-name">
         {{item.name}}
       </div>
