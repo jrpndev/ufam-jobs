@@ -45,6 +45,15 @@
       "number": 50000,
       "shift": "Matutino",
       "id": 5
+    },
+    {
+      "name": "zordinn",
+      "date": "24/05/2023",
+      "wage": 10000,
+      "description": "ser bom e fofo",
+      "number": 100,
+      "shift": "4",
+      "id": 6
     }
   ]
 }

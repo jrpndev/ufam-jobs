@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+
 .home-page-container {
     padding-top: 20%;
     display: flex;
@@ -6,38 +9,83 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    top:0;
+    
+
 }
 
-.set-new-ad {
-    position: fixed;
-    width: 75%;
-    margin-bottom: 20rem;
+.example-full-width{
+   margin-top: 15px;
+   width: 200px;
+   height: 75px;
+
+ 
+
+   
 }
+
+::placeholder{
+
+    text-align: flex-start;
+    color: black;
+ 
+}
+.search-input{
+    margin-bottom: 10px;
+    font-size: 20px;
+   
+}
+
 
 .ufam-ads {
-    margin-top: 100px;
+  
     display: flex;
     flex-direction: column;
-    width: 950px;
+    width: 650px;
+    height: 900px;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    margin-bottom: 50px ;
+    margin: fixed;
+    margin-top: 140px;
+    background-color:#fff;
+
+    
+
+    
 }
 .home-page-search {
     position: fixed;
     top: 0;
     z-index: 1;
+    
 }
 
 .ufam-ad-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+    width: 70%;
     margin: 1rem;
-    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    border: 2px solid #120A8F ;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #120A8F;
+    color:white;
+    font-size: 15px;
+    margin-top: 0;
+    
+
+    
+    
+   
 }
 
 .ufam-ad-card:hover {
-    background-color: rgb(209, 228, 250);
-    cursor: pointer;
+    
 }
+

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="login-box">
         <div class="login-title">
-            <mat-card-title>UFAM<br>JOBS</mat-card-title>
+            <mat-card-title>UFAM JOBS</mat-card-title>
         </div>
         <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
@@ -11,13 +11,14 @@
             <mat-label>Senha</mat-label>
             <input matInput required [(ngModel)]="user.password">
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="login()">Entrar</button>
+        <button  mat-raised-button class="btt" color="primary" (click)="login()">Entrar</button>
         <div class="login-footer">
-            <label>Esqueceu sua senha? clique aqui</label>
-            <label for="">Criar conta : </label>
+            <label >Esqueceu sua senha? clique aqui</label>
+            <label for="">Criar conta:  </label>
             <div class="login-create-account-btn">
-                <button mat-raised-button color="primary" (click)="companiesRegister()">Corporativa</button>
-                <button mat-raised-button color="primary" (click)="register()">Profissional</button>
+                <button mat-raised-button class="btt-corp" color="primary" (click)="companiesRegister()">Corporativa</button>
+                
+                <button mat-raised-button class="btt-disc" color="primary" (click)="register()">Discente</button>
             </div>
         </div>
     </div>

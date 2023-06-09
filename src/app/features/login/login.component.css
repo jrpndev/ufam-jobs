@@ -1,9 +1,15 @@
+
+
+
+
 .container{
     width: 100%;
     height: 100%;
+    background-color: #3f51b5;
+    color: aliceblue;
 }
 .login-box{
-    border:0.5px solid #3f51b5;
+    border:3px solid rgb(0, 0, 0);
     border-radius: 5px;
     position: absolute;
     top: 50%;
@@ -14,7 +20,26 @@
     transform: translate(-50%,-50%);
     justify-content: center;
     padding: 30px;
+    background-color: rgb(255, 253, 253) ;
+    width: 40%;
+    height: 60%;
+
 }
+
+.btt{
+    width: 90px;
+    padding: 10px;
+    
+}
+
+.btt:hover{
+    background-color: whitesmoke;
+    color:#3f51b5;
+    transition-duration: 0.5s;
+    padding: 10px;
+    border: 0.5px solid #3f51b5;
+}
+
 .login-box-input{
     display: flex;
     flex-direction: column;
@@ -35,14 +60,29 @@ mat-card-title{
     display: flex;
     flex-direction: column;
     color: #3f51b5;
+    
 }
 .login-footer label{
-    margin-top: 2rem;
+    margin-top: 1rem;
+   
 }
+
+.login-footer label:hover{
+    border: 1px solid #3f51b5;
+    border-radius: 3px;
+    padding: 7px;
+    transition-duration: 0.7s;
+
+}
+
 .login-footer button{
     margin-top: 1rem;
     width: 6rem;
 }
+
+
+
+
 .login-create-account-btn{
     display: flex;
     flex-direction: row;
@@ -51,3 +91,21 @@ mat-card-title{
 .login-create-account-btn button{
     margin-left: 0.5rem;
 }
+
+.btt-disc:hover{
+   background-color: whitesmoke;
+   color:#3f51b5;
+   transition-duration: 0.5s;
+   padding: 10px;
+   border: 0.5px solid #3f51b5;
+ }
+
+
+
+.btt-corp:hover{
+        background-color: whitesmoke;
+        color:#3f51b5;
+        transition-duration: 0.5s;
+        padding: 10px;
+        border: 0.5px solid #3f51b5;
+ }
