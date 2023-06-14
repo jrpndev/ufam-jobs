@@ -1,0 +1,69 @@
+body{
+    color:#120A8f;
+    background-color: rgb(217, 214, 211);
+ }
+ 
+ 
+ main{
+     display: flex;
+     justify-content: center;
+     align-items:center;
+     flex-direction: column;
+ }
+ 
+ 
+ .perfil-background{
+     display: flex;
+     justify-content: center;
+     align-items:center;
+     flex-direction: column;
+     width: 220px;
+     height: 220px;
+     border-radius: 50%;
+     background-color: rgb(182, 163, 163);
+     margin-top: 100px;
+ }
+
+ form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+ }
+ 
+ #file{
+    width: 100px;
+    margin-bottom: 4px;
+      
+
+ }
+ .descricoes{
+     display: flex;
+     justify-content: center;
+     align-items:center;
+     flex-direction: column;
+     width: 800px;
+     height: 250px;
+     background-color: rgb(255, 255, 255);
+ }
+ 
+ .about-you{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     
+ }
+ 
+ 
+ h3{
+   
+    font-size: 36px;
+    color: #120A8f;
+    font-weight: 33 0;
+     
+     
+ }
+ 
+ 

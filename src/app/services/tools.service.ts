@@ -72,10 +72,19 @@ export class ToolsService {
   homePath() {
     this.router.navigate(['/'])
   }
+  profilePath(){
+    this.router.navigate(['profile/1']);
+  }
   adPath(){
     this.router.navigate(['ad'])
   }
   loginpath(){
     this.router.navigate(['login'])
+  }
+  vagasPath(){
+    this.router.navigate(['minhasvagas/1'])
+  }
+  configPath(){
+    this.router.navigate(['config/1'])
   }
 }

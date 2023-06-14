@@ -8,6 +8,10 @@ import { ToolsService } from 'src/app/services/tools.service';
 })
 export class NavBarComponent {
   constructor(private tools : ToolsService){}
+
+  homepage(){
+    this.tools.homePath();
+  }
   searchContent(){
     
   }
@@ -15,12 +19,12 @@ export class NavBarComponent {
     this.tools.loginpath();
   }
   profile(){
-
+    this.tools.profilePath();
   }
   config(){
-
+    this.tools.configPath();
   }
   dashboard(){
-    
+    this.tools.vagasPath();
   }
 }

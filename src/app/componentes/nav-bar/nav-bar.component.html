@@ -1,21 +1,30 @@
 <div class="nav">
-    <div class="nav-left">
+    <div class="nav-left logo" (click)="homepage()">
         UFAM JOBS
     </div>
 
     <div class="nav-right">
+
         <div class="nav-right-element" (click)="dashboard()">
-              <a href="../">Minhas vagas</a> 
+
+            Minhas vagas
+
         </div>
-        <div class="nav-right-element"(click)="profile()">
-            <a href="../">Perfil</a>  
+
+        <div class="nav-right-element" (click)="profile()">
+
+            Perfil
+
         </div>
+
         <div class="nav-right-element" (click)="config()">
-           
-            <a href="../">Configurações</a>  
-           
-        <div class="nav-right-element" (click)="logout()">
-          <a href="../">Sair</a>  
+
+            Configurações
+
+            <div class="nav-right-element" (click)="logout()">
+
+                Sair
+
+            </div>
         </div>
     </div>
-</div>

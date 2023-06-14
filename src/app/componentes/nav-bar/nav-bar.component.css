@@ -31,6 +31,9 @@
     
 }
 
+.logo{
+    cursor: pointer;
+}
 
 .nav-right{
     display: flex;
