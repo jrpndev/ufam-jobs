@@ -1,0 +1,51 @@
+.main-config{
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    background-color: #d3d3d3;
+    border-radius: 20px;
+   
+}
+
+.configs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+h1{
+    margin-top: 30px;
+    color: #120A8F;
+}
+
+.config-btt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btt{
+    margin-top: 5px;
+    width: 160px;
+    height: 50px;
+    font-size: 16px;
+    font-weight:600;
+    cursor: pointer;
+    color: #120A8F;
+    background-color: white;
+    border:none;
+    border-radius: 10px;
+}
+
+.btt:hover{
+    background-color: #120A8F;
+    color: aliceblue;
+    transition:  0.6s ;
+
+        
+}
+

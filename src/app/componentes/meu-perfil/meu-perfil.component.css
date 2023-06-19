@@ -1,69 +1,69 @@
-body{
-    color:#120A8f;
-    background-color: rgb(217, 214, 211);
- }
- 
- 
- main{
-     display: flex;
-     justify-content: center;
-     align-items:center;
-     flex-direction: column;
- }
- 
- 
- .perfil-background{
-     display: flex;
-     justify-content: center;
-     align-items:center;
-     flex-direction: column;
-     width: 220px;
-     height: 220px;
-     border-radius: 50%;
-     background-color: rgb(182, 163, 163);
-     margin-top: 100px;
- }
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Posiciona os elementos à esquerda */
+  margin-bottom: 20px;
+}
 
- form{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+  border-right: 1px solid #ccc;
+  /* Linha suave no lado direito */
+}
 
- }
- 
- #file{
-    width: 100px;
-    margin-bottom: 4px;
-      
+.upload-button {
+  margin-bottom: 10px;
+}
 
- }
- .descricoes{
-     display: flex;
-     justify-content: center;
-     align-items:center;
-     flex-direction: column;
-     width: 800px;
-     height: 250px;
-     background-color: rgb(255, 255, 255);
- }
- 
- .about-you{
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     
- }
- 
- 
- h3{
-   
-    font-size: 36px;
-    color: #120A8f;
-    font-weight: 33 0;
-     
-     
- }
- 
- 
+.options-list {
+  float: left;
+  width: 200px;
+  margin-right: 20px;
+  border-right: 1px solid #ccc;
+  /* Linha suave no lado direito */
+}
+
+.content-container {
+  overflow: hidden;
+}
+
+.content-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+li:hover {
+  background-color: #e0e0e0;
+}
+
+.custom-textarea {
+  width: 100%;
+  height: 200px;
+}
+.custom-textarea:focus {
+  /* Add animation effect on focus */
+  transform: scale(1.02);
+} 
