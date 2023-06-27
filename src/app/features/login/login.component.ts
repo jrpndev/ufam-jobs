@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
     password : ''
   }
 
+  rememberMe !: boolean;
+
   constructor(private route: Router , private tools : ToolsService) {
   }
   ngOnInit(): void {

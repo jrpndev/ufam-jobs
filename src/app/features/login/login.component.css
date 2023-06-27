@@ -1,16 +1,38 @@
-
-
-
-
-.container{
+.container {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #007bff, #ffffff);
-
-    color: white;
+    color: #120A8F;
 }
-.login-box{
-   
+
+.login-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 400px;
+}
+
+.image-left {
+    position: absolute;
+    left: 0;
+    top: 20%;
+}
+
+.image-right {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    /* Estilos adicionais para posicionar e dimensionar a imagem direita */
+}
+
+.example-full-width {
+    display: flex;
+    width: 100%;
+}
+
+.login-box {
     border-radius: 5px;
     position: absolute;
     top: 50%;
@@ -18,99 +40,102 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     justify-content: center;
     padding: 30px;
-    width: 40%;
+    width: 30%;
     height: 60%;
-
 }
 
-.btt{
+.btt {
     width: 90px;
     padding: 10px;
-    
 }
 
-.btt:hover{
+.btt:hover {
     background-color: whitesmoke;
-    color:#3f51b5;
+    color: #3f51b5;
     transition-duration: 0.5s;
     padding: 10px;
     border: 0.5px solid #3f51b5;
 }
 
-.login-box-input{
+.login-box-input {
     display: flex;
     flex-direction: column;
 }
-.login-title{
+
+.login-title {
     width: 100%;
-   
 }
-.login-title{
+u{
+    cursor: pointer;
+}
+.login-title {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
     font-size: 30px;
 }
-mat-card-title{
-    color: whitesmoke;
+
+mat-card-title {
+    color: #120A8F;
     font-size: 30px;
- 
-   
 }
-.login-footer{
+
+.login-footer {
     display: flex;
     flex-direction: column;
-    color: #3f51b5;
-    
-}
-.login-footer label{
+    justify-content: flex-start;
+    width: 100%;
     margin-top: 1rem;
-   
 }
 
-.login-footer label:hover{
-    border: 1px solid #3f51b5;
-    border-radius: 3px;
-    padding: 7px;
+.login-footer label {
+    margin-top: 1rem;
+}
+
+.login-footer label:hover {
     transition-duration: 0.7s;
-
 }
-
-.login-footer button{
+.login-footer button {
     margin-top: 1rem;
     width: 6rem;
 }
 
-
-
-
-.login-create-account-btn{
+.login-create-account-btn {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
 }
-.login-create-account-btn button{
+
+.login-create-account-btn button {
     margin-left: 0.5rem;
 }
 
-.btt-disc:hover{
-   background-color: whitesmoke;
-   color:#3f51b5;
-   transition-duration: 0.5s;
-   padding: 10px;
-   border: 0.5px solid #3f51b5;
- }
+.btt-disc:hover {
+    background-color: whitesmoke;
+    transition-duration: 0.5s;
+    padding: 10px;
+    border: 0.5px solid #3f51b5;
+}
 
+.btt-corp:hover {
+    background-color: whitesmoke;
+    color: #3f51b5;
+    transition-duration: 0.5s;
+    padding: 10px;
+    border: 0.5px solid #3f51b5;
+}
 
+.forgot-password {
+    margin-top: 0.5rem;
+    color: white;
+    text-decoration: none;
+}
 
-.btt-corp:hover{
-        background-color: whitesmoke;
-        color:#3f51b5;
-        transition-duration: 0.5s;
-        padding: 10px;
-        border: 0.5px solid #3f51b5;
- }
+.forgot-password:hover {
+    border: none;
+    padding: 0;
+}

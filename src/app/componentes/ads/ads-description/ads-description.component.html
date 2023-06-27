@@ -1,10 +1,36 @@
 <div class="container">
     <div class="ad-content">
-        <div class="ad-content-name">
-            {{currentAd.name}}
-            {{currentAd.date}}
-            {{currentAd.wage}}
-            {{currentAd.shift}}
+      <div class="ad-info">
+        <div class="company-info">
+          <div class="company-name">
+            Company: {{ currentAd.date }}
+          </div>
+          <div class="company-description">
+            {{ currentAd.description }}
+          </div>
         </div>
+        <div class="job-details">
+          <div class="ad-content-name">
+            {{ currentAd.name }}
+          </div>
+          <div class="info-item">
+            <mat-icon>event</mat-icon> Published: {{ currentAd.date }}
+          </div>
+          <div class="info-item">
+            <mat-icon>attach_money</mat-icon> Salary: {{ currentAd.wage }}
+          </div>
+          <div class="info-item">
+            <mat-icon>access_time</mat-icon> Shift: {{ currentAd.shift }}
+          </div>
+          <div class="info-item">
+            <mat-icon>group</mat-icon> Available Positions: {{ currentAd.number }}
+          </div>
+          <div class="ad-description">
+            {{ currentAd.description }}
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button color="primary">Apply</button>
     </div>
-</div>
+  </div>
+  

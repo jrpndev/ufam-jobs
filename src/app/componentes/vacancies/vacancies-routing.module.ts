@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { MinhasVagasComponent } from './minhas-vagas.component'
+import { VacanciesComponent } from './vacancies.component'
 const routes: Routes = [
-    {path : '', component: MinhasVagasComponent}
+    {path : '', component: VacanciesComponent}
 ]
 @NgModule({
     imports:[

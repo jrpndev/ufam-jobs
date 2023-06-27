@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToolsService } from 'src/app/services/tools.service';
 
 @Component({
@@ -6,13 +7,20 @@ import { ToolsService } from 'src/app/services/tools.service';
   templateUrl: './config.component.html',
   styleUrls: ['./config.component.css']
 })
-export class ConfigComponent {
+export class ConfigComponent implements OnInit {
+
+  configForm !: FormGroup;
   showChangePassword: boolean = false;
-  currentPassword: string = '';
-  newPassword: string = '';
-  confirmPassword: string = '';
 
   constructor(private tools: ToolsService) {}
+
+  ngOnInit(): void {
+    this.configForm = new FormGroup({
+      currentPassword: new FormControl('', Validators.required),
+      newPassword: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required)
+    });
+  }
 
   logout() {
     this.tools.loginpath();
@@ -24,17 +32,21 @@ export class ConfigComponent {
 
   cancelChangePassword() {
     this.showChangePassword = false;
-    this.currentPassword = '';
-    this.newPassword = '';
-    this.confirmPassword = '';
+    this.configForm.reset();
   }
 
   changePassword() {
-    // Implement your password change logic here
-    // You can access the new password using this.newPassword
-    // and the current password using this.currentPassword
-    // You can also perform validations and display error messages if needed
-    // After changing the password, you can reset the form and hide the change password section
-    this.cancelChangePassword();
+    if (this.configForm.valid) {
+      const currentPassword = this.configForm.value.currentPassword;
+      const newPassword = this.configForm.value.newPassword;
+      const confirmPassword = this.configForm.value.confirmPassword;
+
+      // Implement your password change logic here
+      // You can access the new password using newPassword
+      // and the current password using currentPassword
+      // You can also perform validations and display error messages if needed
+
+      this.cancelChangePassword();
+    }
   }
 }

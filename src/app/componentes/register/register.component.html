@@ -1,11 +1,11 @@
 <div class="container">
+    <img src="assets/woman-university.jfif" alt="">
     <div class="login-box">
         <div class="login-title">
             <button mat-button color="primary" class="mat-button--basic" (click)="goBack()">
                 <mat-icon>arrow_back</mat-icon>
                 Voltar
             </button>
-            <mat-card-title>UFAM JOBS</mat-card-title>
         </div>
         <mat-tab-group>
             <mat-tab label="Dados Pessoais">
@@ -15,13 +15,13 @@
                         <mat-label>Nome</mat-label>
                         <input matInput required [(ngModel)]="user.firstName">
                     </mat-form-field>
-    
-                    <mat-form-field class="example-full-width example-full-size input-type-name-element">   
+
+                    <mat-form-field class="example-full-width example-full-size input-type-name-element">
                         <mat-label>Sobrenome</mat-label>
                         <input matInput required [(ngModel)]="user.surname">
                     </mat-form-field>
                 </div>
-                
+
                 <mat-form-field class="example-full-width example-full-size">
                     <mat-label>Curso : </mat-label>
                     <input matInput required [(ngModel)]="user.email">
@@ -111,8 +111,8 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Descrição</mat-label>
                     <textarea matInput rows="4" placeholder="Digite a descrição aqui"></textarea>
-                  </mat-form-field>
-                  
+                </mat-form-field>
+
             </mat-tab>
         </mat-tab-group>
 

@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 100px;
@@ -9,16 +10,18 @@
 .profile-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
-.menu-container {
-  width: 250px;
-  display: block;
-}
-mat-form-field{
+mat-form-field {
   margin-right: 1rem;
 }
+
+mat-label {
+  color: #120A8F;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 .profile-image {
   width: 150px;
   height: 150px;
@@ -36,42 +39,53 @@ mat-form-field{
 
 .options-list {
   width: 200px;
-  margin-right: 20px;
   border-right: 1px solid #ccc;
 }
 
 .content-container {
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  margin-left: 5rem;
+  display: flex;
 }
 
 .tabs-container {
   display: flex;
+  height: 100%;
+  border-radius: 5px;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  margin: 1rem;
+}
+
+.example-full-width {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+}
+
+.example-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .content-div {
+  margin-top: 5rem;
   display: flex;
-  width: 600px;
+  width: 100%;
+  height: 50%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px; /* Defina a altura mínima adequada aqui */
 }
 
 .mat-form {
   display: flex;
-  flex-direction: column;
   width: 100%;
-  justify-content: center;
-  align-items: center;
 }
 
 .mat-form-group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 ul {
@@ -84,6 +98,8 @@ li {
   padding: 10px;
   background-color: #f0f0f0;
   border-radius: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
   margin-bottom: 5px;
 }
 
@@ -93,15 +109,25 @@ li:hover {
 
 .custom-textarea {
   width: 100%;
-  height: 200px;
+  height: 100%;
 }
 
 .custom-textarea:focus {
-  /* Add animation effect on focus */
   transform: scale(1.02);
 }
 
 .scrollable-content {
   max-height: 400px;
   overflow-y: auto;
+}
+
+.file-icon {
+  margin-right: 5px;
+}
+.github-icon {
+  margin-right: 5px;
+}
+img{
+  margin: auto;
+  width: 30px;
 }

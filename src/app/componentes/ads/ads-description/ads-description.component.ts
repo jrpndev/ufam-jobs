@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Ads } from 'src/app/models/ads.model';
 
@@ -10,8 +10,7 @@ import { Ads } from 'src/app/models/ads.model';
 })
 export class AdsDescriptionComponent implements OnInit {
 
-  baseUrl = 'http://localhost:3001/ads/'
-
+  baseUrl = 'http://localhost:3001/ads/';
   currentAd: Ads = {
     name: '',
     date: null,
@@ -19,8 +18,7 @@ export class AdsDescriptionComponent implements OnInit {
     description: '',
     number: 0,
     shift: ''
-  }
-
+  };
 
   constructor(private router: ActivatedRoute, private http: HttpClient) { }
 
@@ -31,14 +29,15 @@ export class AdsDescriptionComponent implements OnInit {
   readById(): number {
     let id;
     this.router.paramMap.subscribe(params => {
-      id = params.get('id')?.split(':')[1]
-    })
+      id = params.get('id')?.split(':')[1];
+    });
     return id ?? 0;
   }
+
   getAdInformation() {
     const url = this.baseUrl + this.readById();
     this.http.get<Ads>(url).subscribe(res => {
       this.currentAd = res;
-    })
+    });
   }
 }

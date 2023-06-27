@@ -82,7 +82,7 @@ export class ToolsService {
     this.router.navigate(['login'])
   }
   vagasPath(){
-    this.router.navigate(['minhasvagas/1'])
+    this.router.navigate(['vacancies/1'])
   }
   configPath(){
     this.router.navigate(['config/1'])

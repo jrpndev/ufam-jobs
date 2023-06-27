@@ -9,10 +9,12 @@
     justify-content: center;
     font-family: 'Poppins', sans-serif;
 }
-.example-full-width{
+
+.example-full-width {
     display: flex;
     width: 50%;
 }
+
 .ufam-ads {
     position: fixed;
     top: 90%;

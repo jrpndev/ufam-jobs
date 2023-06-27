@@ -5,34 +5,31 @@
 
     <div class="config-content">
       <h1>Configurações</h1>
-      <button class="btt" (click)="openChangePassword()">Alterar Senha</button>
-      <button class="btt" (click)="logout()">Sair</button>
+      <button mat-button (click)="openChangePassword()">Alterar Senha</button>
+      <button mat-button (click)="logout()">Sair</button>
     </div>
 
     <div class="change-password" *ngIf="showChangePassword">
-      
-      <form (ngSubmit)="changePassword()">
+      <form [formGroup]="configForm" (ngSubmit)="changePassword()">
         <div class="form-group">
           <mat-form-field appearance="fill">
             <mat-label for="current-password">Senha Atual</mat-label>
-            <input matInput type="password" id="current-password" [(ngModel)]="currentPassword" required>
+            <input matInput type="password" id="current-password" formControlName="currentPassword" required>
           </mat-form-field>
         </div>
         <div class="form-group">
           <mat-form-field appearance="fill">
             <mat-label for="new-password">Nova Senha</mat-label>
-            <input matInput type="password" id="new-password" [(ngModel)]="newPassword" required>
+            <input matInput type="password" id="new-password" formControlName="newPassword" required>
           </mat-form-field>
         </div>
-        <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label for="confirm-password">Confirmar Senha</mat-label>
-            <input matInput type="password" id="confirm-password" [(ngModel)]="confirmPassword" required>
-          </mat-form-field>
-        </div>
+        <mat-form-field appearance="fill">
+          <mat-label for="confirm-password">Confirmar Senha</mat-label>
+          <input matInput type="password" id="confirm-password" formControlName="confirmPassword" required>
+        </mat-form-field>
         <div class="change-password-button">
-          <button mat-raised-button color="primary" type="submit" class="btt">Salvar</button>
-          <button mat-raised-button color="warn" class="btt" (click)="cancelChangePassword()">Cancelar</button>
+          <button mat-raised-button color="primary" type="submit">Salvar</button>
+          <button mat-raised-button color="warn" (click)="cancelChangePassword()">Cancelar</button>
         </div>
       </form>
     </div>

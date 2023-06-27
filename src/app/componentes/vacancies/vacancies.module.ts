@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MinhasVagasComponent } from './minhas-vagas.component';
-import { MinhasVagasRoutingModule } from './minhas-vagas-routing.module';
+import { VacanciesComponent } from './vacancies.component';
+import { MinhasVagasRoutingModule } from './vacancies-routing.module';
 import { NavBarModule } from '../nav-bar/nav-bar.module';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
 @NgModule({
   declarations: [
-    MinhasVagasComponent
+    VacanciesComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatCardModule,
     FormsModule,
+    MatIconModule
   ]
 })
-export class MinhasVagasModule { }
+export class VacanciesModule { }

@@ -9,6 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class MeuPerfilComponent {
   userForm: FormGroup;
   selectedOption: string = 'Opção 1';
+  linkedinLink: string = '';
+  githubLink: string = '';
 
   constructor(private formBuilder: FormBuilder) {
     this.userForm = this.formBuilder.group({
@@ -37,5 +39,20 @@ export class MeuPerfilComponent {
 
   selectOption(option: string) {
     this.selectedOption = option;
+  }
+
+  handleFileUpload(event: any) {
+    const files: FileList = event.target.files;
+    // Resto do código para lidar com os arquivos selecionados
+  }
+
+  saveLinks() {
+    // Lógica para salvar os links do LinkedIn e do GitHub
+    console.log('LinkedIn:', this.linkedinLink);
+    console.log('GitHub:', this.githubLink);
+  }
+
+  openLink(link: string) {
+    // Lógica para abrir o link em uma nova guia
   }
 }

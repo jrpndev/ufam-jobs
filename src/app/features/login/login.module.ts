@@ -5,7 +5,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card'
 import { LoginRoutingModule } from './login-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox'; // Importe o MatCheckboxModule aqui
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatCardModule,
     LoginRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   exports:[
     LoginComponent

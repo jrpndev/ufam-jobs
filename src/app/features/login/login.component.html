@@ -1,23 +1,27 @@
 <div class="container">
+    <div class="login-background">
+        <img class="image-left" src="assets/university.jfif" alt="Imagem Esquerda">
+        <img class="image-right" src="assets/engineer.jfif" alt="Imagem Direita">
+    </div>
     <div class="login-box">
         <div class="login-title">
             <mat-card-title>UFAM JOBS</mat-card-title>
         </div>
         <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
-            <input [ngModel]="user.email" matInput required >
+            <input [ngModel]="user.email" matInput required>
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Senha</mat-label>
             <input matInput required [(ngModel)]="user.password">
         </mat-form-field>
-        <button  mat-raised-button class="btt" color="primary" (click)="login()">Entrar</button>
+        <button mat-raised-button class="btt" color="primary" (click)="login()">Entrar</button>
         <div class="login-footer">
-            <label >Esqueceu sua senha? clique aqui</label>
-            <label for="">Criar conta:  </label>
+            <mat-checkbox color="primary" [(ngModel)]="rememberMe">Lembre-se de mim</mat-checkbox>
+            <mat-label>Esqueceu sua senha? Clique <u>aqui</u> </mat-label>
+            <label for="">Criar conta:</label>
             <div class="login-create-account-btn">
                 <button mat-raised-button class="btt-corp" color="primary" (click)="companiesRegister()">Corporativa</button>
-                
                 <button mat-raised-button class="btt-disc" color="primary" (click)="register()">Discente</button>
             </div>
         </div>
