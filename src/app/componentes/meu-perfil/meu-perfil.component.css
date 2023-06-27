@@ -1,11 +1,24 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  position: fixed;
+}
+
 .profile-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* Posiciona os elementos à esquerda */
-  margin-bottom: 20px;
 }
 
+.menu-container {
+  width: 250px;
+  display: block;
+}
+mat-form-field{
+  margin-right: 1rem;
+}
 .profile-image {
   width: 150px;
   height: 150px;
@@ -15,7 +28,6 @@
   background-position: center;
   margin-bottom: 10px;
   border-right: 1px solid #ccc;
-  /* Linha suave no lado direito */
 }
 
 .upload-button {
@@ -23,23 +35,43 @@
 }
 
 .options-list {
-  float: left;
   width: 200px;
   margin-right: 20px;
   border-right: 1px solid #ccc;
-  /* Linha suave no lado direito */
 }
 
 .content-container {
   overflow: hidden;
 }
 
+.tabs-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem;
+}
+
 .content-div {
+  display: flex;
+  width: 600px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px; /* Defina a altura mínima adequada aqui */
+}
+
+.mat-form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   justify-content: center;
+  align-items: center;
+}
+
+.mat-form-group {
+  display: flex;
+  flex-direction: row;
 }
 
 ul {
@@ -63,7 +95,13 @@ li:hover {
   width: 100%;
   height: 200px;
 }
+
 .custom-textarea:focus {
   /* Add animation effect on focus */
   transform: scale(1.02);
-} 
+}
+
+.scrollable-content {
+  max-height: 400px;
+  overflow-y: auto;
+}

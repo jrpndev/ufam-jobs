@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class MeuPerfilComponent {
   userForm: FormGroup;
-  selectedOption: string;
+  selectedOption: string = 'Opção 1';
 
   constructor(private formBuilder: FormBuilder) {
     this.userForm = this.formBuilder.group({
@@ -25,8 +25,6 @@ export class MeuPerfilComponent {
       phone: ['', Validators.required],
       gender: ['', Validators.required]
     });
-
-    this.selectedOption = '';
   }
 
   submitForm() {

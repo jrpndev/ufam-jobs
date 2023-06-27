@@ -1,34 +1,39 @@
 <app-nav-bar></app-nav-bar>
-<div class="home-page-container">
-  
-  <div class="home-page-search">
-    <mat-form-field class="example-full-width">
-      <input matInput="" class="search-input" [(ngModel)]="text" placeholder="Ex. Programador" (keyup)="searchContentData()">
-    </mat-form-field>  
 
+<div class="home-page-container">
+
+  <div class="home-page-search">
+    <mat-form-field class="example-full-width custom-input-width">
+      <input matInput="" class="search-input" [(ngModel)]="text" placeholder="Ex. Programador" (keyup)="searchContentData()">
+    </mat-form-field>
   </div>
-   
+
   <div class="ufam-ads">
     <div (click)="currentAd(item.id)" *ngFor="let item of filteredAd" class="ufam-ad-card">
       <div class="ufam-card-ad-name">
-        {{item.name}}
+        <i class="material-icons">work</i>
+        <span>{{item.name}}</span>
       </div>
       <div class="ufam-card-ad-wage">
-        Salário : {{item.wage}}
+        <i class="material-icons">attach_money</i>
+        Salário: {{item.wage}}
       </div>
       <div class="ufam-card-ad-shift">
-        Turno : {{item.shift}}
+        <i class="material-icons">access_time</i>
+        Turno: {{item.shift}}
       </div>
       <div class="ufam-card-ad-date">
-        Publicado em : {{item.date}}
+        <i class="material-icons">event</i>
+        Publicado em: {{item.date}}
       </div>
       <div class="ufam-card-ad-number">
-        Vagas : {{item.number}}
+        <i class="material-icons">group</i>
+        Vagas: {{item.number}}
       </div>
-      
-              
     </div>
   </div>
+
   <div class="home-page-content">
   </div>
+
 </div>

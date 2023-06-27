@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-
 .home-page-container {
-    padding-top: 20%;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -10,58 +8,35 @@
     align-items: center;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
-    font-weight: 900;
-    top:0;
-    
-
 }
-
 .example-full-width{
-   margin-top: 15px;
-   width: 200px;
-   height: 75px;
-
- 
-
-   
+    display: flex;
+    width: 50%;
 }
-
-::placeholder{
-
-    text-align: flex-start;
-    color: black;
- 
-}
-.search-input{
-    margin-bottom: 10px;
-    font-size: 20px;
-   
-}
-
-
 .ufam-ads {
-  
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    width: 650px;
-    height: 900px;
-    justify-content: center;
+    width: 50%;
+    height: 100%;
+    justify-content: flex-start;
     align-items: center;
-    border-radius: 10px;
-    margin-bottom: 50px ;
-    margin: fixed;
-    margin-top: 140px;
-    background-color:#fff;
-
-    
-
-    
+    border-radius: 15px;
+    overflow-y: auto;
+    /* Adicionado para permitir a rolagem dentro de .ufam-ads */
 }
+
 .home-page-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     position: fixed;
-    top: 0;
+    top: 20%;
     z-index: 1;
-    
+    /* Adicionado para garantir que a barra de pesquisa fique acima de .ufam-ads */
 }
 
 .ufam-ad-card {
@@ -70,22 +45,32 @@
     justify-content: center;
     width: 70%;
     margin: 1rem;
-    margin-bottom: 10px;
-    border: 2px solid #120A8F ;
+    border: 2px solid #120A8F;
     padding: 10px;
-    border-radius: 7px;
     background-color: #120A8F;
-    color:white;
+    border-radius: 15px;
+    color: white;
     font-size: 15px;
     margin-top: 0;
-    
-
-    
-    
-   
 }
 
 .ufam-ad-card:hover {
-    
+    cursor: pointer;
 }
 
+.ufam-card-ad-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.ufam-card-ad-name i {
+    margin-right: 5px;
+}
+
+.ufam-card-ad-wage,
+.ufam-card-ad-shift,
+.ufam-card-ad-date,
+.ufam-card-ad-number {
+    margin-bottom: 3px;
+}

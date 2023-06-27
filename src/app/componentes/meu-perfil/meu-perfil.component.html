@@ -1,107 +1,115 @@
 <app-nav-bar></app-nav-bar>
-<div class="profile-container">
-  <div class="profile-image"></div>
-  <button class="upload-button" mat-raised-button color="primary">
-    <mat-icon>attach_file</mat-icon>
-    Capture um arquivo
-  </button>
+<div class="container">
+  <div class="tabs-container">
+    <div class="menu-container">
+      <div class="profile-container">
+        <div class="profile-image"></div>
+        <button class="upload-button" mat-raised-button color="primary">
+          <mat-icon>attach_file</mat-icon>
+          Capture um arquivo
+        </button>
+      </div>
+      <div class="options-list">
+        <ul>
+          <li (click)="selectOption('Opção 1')">Sobre você</li>
+          <li (click)="selectOption('Opção 2')">Alterar dados</li>
+          <li (click)="selectOption('Opção 3')">Arquivos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-container">
+      <div class="scrollable-content">
+        <div *ngIf="selectedOption === 'Opção 1'" class="content-div">
+          <mat-label for="">Use o campo abaixo para descrever melhor seus objetivos profissionais:</mat-label>
+          <mat-form-field appearance="fill">
+            <mat-label>Texto</mat-label>
+            <textarea matInput class="custom-textarea"></textarea>
+          </mat-form-field>
+          <!-- Conteúdo adicional aqui -->
+        </div>
+        <div *ngIf="selectedOption === 'Opção 2'" class="content-div">
+          <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+            <div class="mat-form">
+              <div class="mat-form-group">
+                <mat-form-field class="example-full-width example-full-size">
+                  <mat-label>Nome</mat-label>
+                  <input matInput formControlName="firstName" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Sobrenome</mat-label>
+                  <input matInput formControlName="surname" required>
+                </mat-form-field>
+              </div>
+              <div class="mat-form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Matrícula</mat-label>
+                  <input matInput formControlName="mat" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Data</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="mat-form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Rua</mat-label>
+                  <input matInput formControlName="street" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Bairro</mat-label>
+                  <input matInput formControlName="neigh" required>
+                </mat-form-field>
+              </div>
+              <div class="mat-form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>CEP</mat-label>
+                  <input matInput formControlName="cep" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Número</mat-label>
+                  <input matInput formControlName="number" required>
+                </mat-form-field>
+              </div>
+              <div class="mat-form-group">
+                <mat-form-field appearance="fill">
+                  <mat-label>Curso</mat-label>
+                <input matInput formControlName="course" required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Descrição</mat-label>
+                <textarea matInput formControlName="description" rows="4" required></textarea>
+              </mat-form-field>
+            </div>
+
+            <div class="mat-form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Telefone</mat-label>
+                <input matInput formControlName="phone" required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Gênero</mat-label>
+                <mat-select formControlName="gender" required>
+                  <mat-option value="Masculino">Masculino</mat-option>
+                  <mat-option value="Feminino">Feminino</mat-option>
+                  <mat-option value="Outro">Outro</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Enviar</button>
+        </form>
+      </div>
+
+      <div *ngIf="selectedOption === 'Opção 3'" class="content-div">
+        <h3>Conteúdo da Opção 3</h3>
+        <!-- Conteúdo adicional aqui -->
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="options-list">
-  <ul>
-    <li (click)="selectOption('Opção 1')">Sobre você</li>
-    <li (click)="selectOption('Opção 2')">Alterar dados</li>
-    <li (click)="selectOption('Opção 3')">Arquivos</li>
-  </ul>
-</div>
-
-<div class="content-container">
-  <div *ngIf="selectedOption === 'Opção 1'" class="content-div">
-
-    <mat-label for="">Use o campo abaixo para descrever melhor seus objetivos profissionais:</mat-label>
-    <mat-form-field appearance="fill">  
-      <mat-label>Texto</mat-label>
-      <textarea matInput class="custom-textarea"></textarea>
-    </mat-form-field>
-    
-    <!-- Conteúdo adicional aqui -->
-  </div>
-
-  <div *ngIf="selectedOption === 'Opção 2'" class="content-div">
-    <form [formGroup]="userForm" (ngSubmit)="submitForm()">
-      <mat-form-field class="example-full-width example-full-size">
-        <mat-label>Nome</mat-label>
-        <input matInput formControlName="firstName" required>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Sobrenome</mat-label>
-        <input matInput formControlName="surname" required>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Matrícula</mat-label>
-        <input matInput formControlName="mat" required>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Data</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Rua</mat-label>
-        <input matInput formControlName="street" required>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Bairro</mat-label>
-        <input matInput formControlName="neigh" required>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>CEP</mat-label>
-        <input matInput formControlName="cep" required>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Número</mat-label>
-        <input matInput formControlName="number" required>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Curso</mat-label>
-        <input matInput formControlName="course" required>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Descrição</mat-label>
-        <textarea matInput formControlName="description" rows="4" required></textarea>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Telefone</mat-label>
-        <input matInput formControlName="phone" required>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Gênero</mat-label>
-        <mat-select formControlName="gender" required>
-          <mat-option value="Masculino">Masculino</mat-option>
-          <mat-option value="Feminino">Feminino</mat-option>
-          <mat-option value="Outro">Outro</mat-option>
-        </mat-select>
-      </mat-form-field>
-    
-      <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Enviar</button>
-    </form>
-    
-  </div>
-
-  <div *ngIf="selectedOption === 'Opção 3'" class="content-div">
-    <h3>Conteúdo da Opção 3</h3>
-    <!-- Conteúdo adicional aqui -->
-  </div>
-</div>
