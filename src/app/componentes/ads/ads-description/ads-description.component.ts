@@ -40,4 +40,7 @@ export class AdsDescriptionComponent implements OnInit {
       this.currentAd = res;
     });
   }
+  createApplication(){
+    
+  }
 }

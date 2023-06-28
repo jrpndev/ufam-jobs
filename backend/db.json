@@ -9,51 +9,21 @@
       "number": 123,
       "shift": "15",
       "id": 1
-    },
+    }
+  ],
+  "enterprises": [
     {
-      "name": "Programador Senior",
-      "date": "03/05/2023",
-      "wage": 3000,
-      "description": "Precisa saber .net e node",
-      "number": 1,
-      "shift": "Integral",
-      "id": 2
-    },
-    {
-      "name": "Desenvolvedor Node",
-      "date": "03/05/2023",
-      "wage": 500000,
-      "description": "Precisa saber node, python, sql, c++ e ter experiencia com .NET",
-      "number": 10,
-      "shift": "Integral",
-      "id": 3
-    },
-    {
-      "name": "Desenvolvedor C++",
-      "date": "03/05/2023",
-      "wage": 3000000,
-      "description": "Precisa ser bom em otimização de algortimos  e desenvolvimento de jogos para visual studio 2000",
-      "number": 30,
-      "shift": "Vespertino",
-      "id": 4
-    },
-    {
-      "name": "Analisa de desenvolvimento",
-      "date": "03/05/2023",
-      "wage": 5000,
-      "description": "Precisa estar atento com as atividades individuais do time",
-      "number": 50000,
-      "shift": "Matutino",
-      "id": 5
-    },
-    {
-      "name": "zordinn",
-      "date": "24/05/2023",
-      "wage": 10000,
-      "description": "ser bom e fofo",
-      "number": 100,
-      "shift": "4",
-      "id": 6
+      "name": "Aventura",
+      "street": "12",
+      "neigh": "A",
+      "number": "23",
+      "description": "",
+      "phone": "3151",
+      "cnpj": "88888",
+      "nacionality": "br",
+      "email": "3819",
+      "password": "",
+      "id": 1
     }
   ]
 }

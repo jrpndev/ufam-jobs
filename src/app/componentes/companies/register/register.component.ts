@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Enterprise } from 'src/app/models/enterprises.model';
 import { EmailService } from 'src/app/services/send-email.service';
+import { ToolsService } from 'src/app/services/tools.service';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,7 @@ export class RegisterComponent {
     email: '',
     password: ''
   }
-  constructor(private route: Router, private service : EmailService) { }
+  constructor(private route: Router, private service : EmailService, private tools : ToolsService) { }
 
   authcode = this.service.generateCode();
 
@@ -31,7 +32,9 @@ export class RegisterComponent {
   goHome() {
     this.route.navigate(['/']);
   }
-  sendEmail(){
-    this.service.sendEmail("jrui797@gmail.com", "jrui797@gmail.com","UFAM-JOBS", this.enterprise.name, this.service.generateCode());
+  enterpriseRegister(){
+    this.tools.createEnterprise(this.enterprise).subscribe(res=>{
+      console.log(res)
+    })
   }
 }

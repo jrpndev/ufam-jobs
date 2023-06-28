@@ -5,10 +5,13 @@
 
     <div class="nav-right">
 
+        <div *ngIf ="!isEnterprise" class="nav-right-element" (click)="dashboard()">
+            Dashboard
+        </div>
         <div class="nav-right-element" (click)="homepage()">
             Vagas
         </div>
-        <div class="nav-right-element" (click)="dashboard()">
+        <div *ngIf="isEnterprise" class="nav-right-element" (click)="vacancies()">
 
             Minhas vagas
 
@@ -23,7 +26,6 @@
         <div class="nav-right-element" (click)="config()">
 
             Configurações
-
 
         </div>
     </div>

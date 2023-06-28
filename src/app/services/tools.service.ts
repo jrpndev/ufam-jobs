@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { Enterprise } from '../models/enterprises.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +16,13 @@ export class ToolsService {
   baseUrl = 'http://localhost:3001/users'
   baseEnterpriseUrl = "http://localhost:3001/enterprises"
 
-  constructor(private bar: MatSnackBar, private http: HttpClient, private router: Router) {
+  constructor(
+    private bar: MatSnackBar,
+    private http: HttpClient,
+    private router: Router , 
+    private route : ActivatedRoute
+    ) {
+
   }
   showAlert = (message: string, title: string) => {
     this.bar.open(message, title, { duration: 3000 });
@@ -72,9 +78,6 @@ export class ToolsService {
   homePath() {
     this.router.navigate(['/'])
   }
-  profilePath(){
-    this.router.navigate(['profile/1']);
-  }
   adPath(){
     this.router.navigate(['ad'])
   }
@@ -86,5 +89,22 @@ export class ToolsService {
   }
   configPath(){
     this.router.navigate(['config/1'])
+  }
+  createEnterprise(enterprise : Enterprise){
+    return this.http.post(this.baseEnterpriseUrl , enterprise);
+  }
+  getById() : number{
+    let id  = 0;
+    this.route.paramMap.subscribe((params) => {
+      id = Number(params.get('id'));
+    });
+    return id;
+  }
+  getByUserType() : any{
+    let data;
+    this.route.paramMap.subscribe((params) => {
+     data = params.get('userType');
+    });
+    return data;
   }
 }
