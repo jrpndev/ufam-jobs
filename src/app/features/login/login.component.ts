@@ -34,18 +34,22 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    if (this.user.email === '' || this.user.password === '') {
+      this.tools.showAlert('Preencha o e-mail e a senha', 'erro');
+      return;
+    }
+
     const student = this.students.find((a) => a.email === this.user.email && this.user.password == a.password);
     const enterprise = this.enterprises.find((b) => b.cnpj === this.user.email && b.password == this.user.password);
     
     if (student) {
-      this.tools.showAlert('Login efetuado', 'sucesso')
+      this.tools.showAlert('Login efetuado', 'sucesso');
       this.route.navigate(['student', student.id]);
     } else if (enterprise) {
       this.route.navigate(['enterprise', enterprise.id]);
-      this.tools.showAlert('Login efetuado', 'sucesso')
-
+      this.tools.showAlert('Login efetuado', 'sucesso');
     } else {
-      console.log('Email inválido ou não encontrado');
+      this.tools.showAlert('Login incorreto', 'erro');
     }
   }
 

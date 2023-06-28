@@ -40,13 +40,14 @@ export class RegisterComponent {
     this.user.date = event.value;
   }
   createUser(): void {
-    if (this.tools.validateInputs(this.user)) {
-      this.http.post<User>(this.baseUrl, this.user).subscribe(() => {
+    
+      this.http.post<User>(this.baseUrl, this.user).subscribe((res) => {
         this.tools.showAlert('Usuário cadastrado com sucesso', 'Sucesso!');
         this.goBack();
+      }, err=>{
+        this.tools.showAlert('Erro ao cadastrar', 'Erro!');
+
       });
-    } else {
-      this.tools.showAlert('Há campos a serem preenchidos', 'Erro!');
-    }
+    
   }
 }

@@ -1,7 +1,25 @@
 {
-  "users": [],
-  "ads": [
+  "users": [
+    {
+      "firstName": "A",
+      "surname": "A",
+      "mat": "43",
+      "street": "313",
+      "neigh": "5",
+      "cep": "61",
+      "number": "161",
+      "course": "A",
+      "description": "",
+      "phone": "141241",
+      "cpf": "43",
+      "gender": "M",
+      "email": "A",
+      "date": null,
+      "password": "A",
+      "id": 1
+    }
   ],
+  "ads": [],
   "enterprises": [
   ]
 }

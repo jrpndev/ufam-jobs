@@ -34,7 +34,8 @@ export class RegisterComponent {
   }
   enterpriseRegister(){
     this.tools.createEnterprise(this.enterprise).subscribe(res=>{
-      console.log(res)
+      this.tools.showAlert('Sucesso ao cadastrar', 'sucesso');
+      this.route.navigate(['login'])
     })
   }
 }

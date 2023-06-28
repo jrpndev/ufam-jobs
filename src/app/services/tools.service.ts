@@ -34,7 +34,8 @@ export class ToolsService {
       if (
         (object[key] === null || object[key] === '') &&
         key !== 'enterpriseId' &&
-        key !== 'editMode'
+        key !== 'editMode' &&
+        key!== 'date'
       ) {
         aux = true;
       }
