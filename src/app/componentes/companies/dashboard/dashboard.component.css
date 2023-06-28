@@ -1,11 +1,47 @@
-.container{
+.container {
     position: fixed;
     top: 30%;
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
-}
-button{
+  }
+  
+  button {
     margin: 1rem;
-}
+  }
+  
+  .create-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .create-form.active {
+    opacity: 1;
+  }
+  
+  .create-form input,
+  .create-form textarea {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  
+  .create-form button {
+    margin-top: 1rem;
+  }
+  .create-form-button{
+    display: flex;
+  }
+  .icons{
+    margin: 1rem;
+    cursor: pointer;
+  }
+  

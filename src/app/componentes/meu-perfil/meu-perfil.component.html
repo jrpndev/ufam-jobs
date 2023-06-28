@@ -1,4 +1,5 @@
 <app-nav-bar></app-nav-bar>
+
 <div class="container">
   <div class="tabs-container">
     <div class="menu-container">
@@ -13,111 +14,146 @@
         <ul>
           <li (click)="selectOption('Opção 1')">Sobre você</li>
           <li (click)="selectOption('Opção 2')">Alterar dados</li>
-          <li (click)="selectOption('Opção 3')">Arquivos</li>
         </ul>
       </div>
     </div>
     <div class="content-container">
       <div class="scrollable-content">
         <div *ngIf="selectedOption === 'Opção 1'" class="content-div">
-          <mat-label for="">Use o campo abaixo para descrever melhor seus objetivos profissionais:</mat-label>
+          <mat-label for="">
+            Use o campo abaixo para descrever melhor seus objetivos profissionais:
+          </mat-label>
           <mat-form-field appearance="fill" class="example-full-width">
-            <textarea matInput class="custom-textarea"></textarea>
+            <textarea matInput class="custom-textarea" [(ngModel)]="description"></textarea>
           </mat-form-field>
         </div>
         <div *ngIf="selectedOption === 'Opção 2'" class="content-div">
-          <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+
+          <form *ngIf="!isEnterprise" (ngSubmit)="submitForm()">
 
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Nome</mat-label>
-              <input matInput formControlName="firstName" required>
+              <input matInput [(ngModel)]="user.firstName" name="firstName" required>
             </mat-form-field>
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Sobrenome</mat-label>
-              <input matInput formControlName="surname" required>
+              <input matInput [(ngModel)]="user.surname" name="surname" required>
             </mat-form-field>
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Matrícula</mat-label>
-              <input matInput formControlName="mat" required>
+              <input matInput [(ngModel)]="user.mat" name="mat" required>
             </mat-form-field>
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Data</mat-label>
-              <input matInput [matDatepicker]="picker" formControlName="date">
+              <input matInput [matDatepicker]="picker" [(ngModel)]="user.date" name="date">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Rua</mat-label>
-              <input matInput formControlName="street" required>
+              <input matInput [(ngModel)]="user.street" name="street" required>
             </mat-form-field>
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Bairro</mat-label>
-              <input matInput formControlName="neigh" required>
+              <input matInput [(ngModel)]="user.neigh" name="neigh" required>
             </mat-form-field>
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>CEP</mat-label>
-              <input matInput formControlName="cep" required>
+              <input matInput [(ngModel)]="user.cep" name="cep" required>
             </mat-form-field>
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Número</mat-label>
-              <input matInput formControlName="number" required>
+              <input matInput [(ngModel)]="user.number" name="number" required>
             </mat-form-field>
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Curso</mat-label>
-              <input matInput formControlName="course" required>
+              <input matInput [(ngModel)]="user.course" name="course" required>
             </mat-form-field>
-
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Descrição</mat-label>
-              <textarea matInput formControlName="description" rows="4" required></textarea>
+              <textarea matInput rows="4" [(ngModel)]="user.description" name="description" required></textarea>
             </mat-form-field>
-
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Telefone</mat-label>
-              <input matInput formControlName="phone" required>
+              <input matInput [(ngModel)]="user.phone" name="phone" required>
             </mat-form-field>
-
+            
             <mat-form-field appearance="fill" class="example-column">
               <mat-label>Gênero</mat-label>
-              <mat-select formControlName="gender" required>
+              <mat-select [(ngModel)]="user.gender" name="gender" required>
                 <mat-option value="Masculino">Masculino</mat-option>
                 <mat-option value="Feminino">Feminino</mat-option>
                 <mat-option value="Outro">Outro</mat-option>
               </mat-select>
             </mat-form-field>
-
-
-            <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Alterar</button>
+            
+            <button mat-raised-button color="primary" type="submit">Alterar</button>
           </form>
-        </div>
+  
+          <form *ngIf="isEnterprise" (ngSubmit)="submitForm()">
 
-        <div *ngIf="selectedOption === 'Opção 3'" class="content-div">
-          <mat-label>Portfólio</mat-label>
-          <div class="file-upload-container">
-            <button mat-raised-button color="primary" class="upload-button" id="file-upload" accept=".pdf"
-              (click)="handleFileUpload($event)">
-              <mat-icon>attach_file</mat-icon>
-              Anexar curriculum
-            </button>
-          </div>
-          <div class="links-container">
-            <div class="link-item">
-              <mat-form-field appearance="fill">
-                <mat-label>LinkedIn</mat-label>
-                <input matInput type="text" [(ngModel)]="linkedinLink" placeholder="Insira o link do LinkedIn">
-              </mat-form-field>
-              <img src="assets/linkedin.png" alt="LinkedIn Icon" class="linkedin-icon">
-            </div>
-            <div class="link-item">
-              <mat-form-field appearance="fill">
-                <mat-label>GitHub</mat-label>
-                <input matInput type="text" [(ngModel)]="githubLink" placeholder="Insira o link do GitHub">
-              </mat-form-field>
-              <img src="assets/github-sign.png" alt="GitHub Icon" class="github-icon">
-            </div>
-          </div>
-          <button mat-raised-button color="primary">Atualizar</button>
+            <mat-form-field appearance="fill" class="example-column">
+              <mat-label>Nome</mat-label>
+              <input matInput [(ngModel)]="enterprise.name" name="name" required>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="example-column">
+              <mat-label>Rua</mat-label>
+              <input matInput [(ngModel)]="enterprise.street" name="street" required>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="example-column">
+              <mat-label>Bairro</mat-label>
+              <input matInput [(ngModel)]="enterprise.neigh" name="neigh" required>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="example-column">
+              <mat-label>Número</mat-label>
+              <input matInput [(ngModel)]="enterprise.number" name="number" required>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="example-column">
+              <mat-label>Descrição</mat-label>
+              <textarea matInput rows="4" [(ngModel)]="enterprise.description" name="description" required></textarea>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="example-column">
+              <mat-label>Telefone</mat-label>
+              <input matInput [(ngModel)]="enterprise.phone" name="phone" required>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="example-column">
+              <mat-label>CNPJ</mat-label>
+              <input matInput [(ngModel)]="enterprise.cnpj" name="cnpj" required>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="example-column">
+              <mat-label>Nacionalidade</mat-label>
+              <input matInput [(ngModel)]="enterprise.nacionality" name="nacionality" required>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="example-column">
+              <mat-label>Email</mat-label>
+              <input matInput [(ngModel)]="enterprise.email" name="email" required>
+            </mat-form-field>
+            
+            <button mat-raised-button color="primary" type="submit">Alterar</button>
+          </form>
+          
+  
         </div>
       </div>
     </div>
   </div>
+</div>
+

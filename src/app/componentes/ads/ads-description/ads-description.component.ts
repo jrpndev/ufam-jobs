@@ -17,13 +17,23 @@ export class AdsDescriptionComponent implements OnInit {
     wage: 0,
     description: '',
     number: 0,
-    shift: ''
+    shift: '',
+    enterpriseId: 0,
+    editMode: false
   };
 
-  constructor(private router: ActivatedRoute, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private http: HttpClient, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getAdInformation();
+    this.currentAd.enterpriseId = this.getById();
+  }
+
+  getById() {
+    let id  = 0;
+    this.route.paramMap.subscribe((params) => {
+      id = Number(params.get('id'));
+    });
+    return id;
   }
 
   readById(): number {

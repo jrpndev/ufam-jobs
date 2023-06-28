@@ -1,4 +1,5 @@
 export interface Ads{
+    editMode: boolean;
     id ?: number,
     name : string,
     date : string | null,
@@ -6,4 +7,5 @@ export interface Ads{
     description : string,
     number : number,
     shift : string,
+    enterpriseId : number
 }

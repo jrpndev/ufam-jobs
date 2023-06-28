@@ -1,29 +1,7 @@
 {
   "users": [],
   "ads": [
-    {
-      "name": "A",
-      "date": "24/04/2023",
-      "wage": 23233,
-      "description": "151515",
-      "number": 123,
-      "shift": "15",
-      "id": 1
-    }
   ],
   "enterprises": [
-    {
-      "name": "Aventura",
-      "street": "12",
-      "neigh": "A",
-      "number": "23",
-      "description": "",
-      "phone": "3151",
-      "cnpj": "88888",
-      "nacionality": "br",
-      "email": "3819",
-      "password": "",
-      "id": 1
-    }
   ]
 }

@@ -13,12 +13,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { NavBarModule } from '../../nav-bar/nav-bar.module';
 import { DashBoardRoutingModule } from './dashboard.routing.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     DashBoardRoutingModule,
@@ -35,7 +36,8 @@ import { DashBoardRoutingModule } from './dashboard.routing.module';
     MatIconModule,
     MatSnackBarModule,
     FormsModule,
-    NavBarModule
+    NavBarModule,
+    
   ],
   exports:[
     DashboardComponent

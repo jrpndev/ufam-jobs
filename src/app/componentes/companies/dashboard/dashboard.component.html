@@ -1,29 +1,28 @@
 <app-nav-bar></app-nav-bar>
+
 <div class="container">
-    <button mat-raised-button color="primary">Criar</button>
-    <div class="items">
-        <mat-card>
-            <mat-card-content>
-              <div class="input-list" *ngFor="let item of items">
-                <mat-form-field appearance="outline">
-                  <mat-label>Name</mat-label>
-                  <input matInput [(ngModel)]="item.name" [disabled]="!item.editMode">
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                  <mat-label>Wage</mat-label>
-                  <input matInput type="number" [(ngModel)]="item.wage" [disabled]="!item.editMode">
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                  <mat-label>Description</mat-label>
-                  <textarea matInput [(ngModel)]="item.description" [disabled]="!item.editMode"></textarea>
-                </mat-form-field>
-                <mat-icon class="edit-icon" (click)="toggleEditMode(item)">
-                  {{ item.editMode ? 'done' : 'edit' }}
-                </mat-icon>
-                <mat-icon class="delete-icon" (click)="deleteItem(item)">delete</mat-icon>
-              </div>
-            </mat-card-content>
-          </mat-card>
-    </div>
+  <button mat-raised-button color="primary" (click)="toggleCreateForm()">Criar</button>
+  <div class="items">
+    <mat-card>
+      <mat-card-content>
+        <div class="input-list" *ngFor="let item of vacancies">
+          <mat-form-field appearance="outline" class="input-with-bottom-line">
+            <mat-label>Nome</mat-label>
+            <input matInput [(ngModel)]="item.name" [disabled]="!item.editMode">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="input-with-bottom-line">
+            <mat-label>Salário</mat-label>
+            <input matInput type="number" [(ngModel)]="item.wage" [disabled]="!item.editMode">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="input-with-bottom-line">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput [(ngModel)]="item.description" [disabled]="!item.editMode"></textarea>
+          </mat-form-field>
+          <mat-icon class="icons" *ngIf="!item.editMode" (click)="toggleEditMode(item)">edit</mat-icon>
+          <mat-icon class="icons" *ngIf="item.editMode" (click)="editItem(item)">done</mat-icon>
+          <mat-icon class="icons" (click)="confirmDeleteItem(item)">delete</mat-icon>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
-  

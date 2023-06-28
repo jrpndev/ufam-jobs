@@ -1,42 +1,136 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Enterprise } from 'src/app/models/enterprises.model';
+import { User } from 'src/app/models/user.model';
+import { ToolsService } from 'src/app/services/tools.service';
 
 @Component({
   selector: 'app-meu-perfil',
   templateUrl: './meu-perfil.component.html',
   styleUrls: ['./meu-perfil.component.css']
 })
-export class MeuPerfilComponent {
-  userForm: FormGroup;
+export class MeuPerfilComponent implements OnInit {
+  enterpriseUrl = 'http://localhost:3001/enterprises';
+  userUrl = 'http://localhost:3001/users';
+
   selectedOption: string = 'Opção 1';
   linkedinLink: string = '';
   githubLink: string = '';
 
-  constructor(private formBuilder: FormBuilder) {
-    this.userForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      surname: ['', Validators.required],
-      mat: ['', Validators.required],
-      date: [null],
-      street: ['', Validators.required],
-      neigh: ['', Validators.required],
-      cep: ['', Validators.required],
-      number: ['', Validators.required],
-      course: ['', Validators.required],
-      description: ['', Validators.required],
-      phone: ['', Validators.required],
-      gender: ['', Validators.required]
-    });
-  }
+  user: User = {
+    firstName: '',
+    surname: '',
+    mat: '',
+    date: null,
+    street: '',
+    neigh: '',
+    cep: '',
+    number: '',
+    course: '',
+    description: '',
+    phone: '',
+    cpf: '',
+    gender: '',
+    email: '',
+    password: ''
+  };
+  
+  enterprise: Enterprise = {
+    name: '',
+    street: '',
+    neigh: '',
+    number: '',
+    description: '',
+    phone: '',
+    cnpj: '',
+    nacionality: '',
+    email: '',
+    password: ''
+  };
+  
+  // Restante do código
+  
 
-  submitForm() {
-    if (this.userForm.invalid) {
-      return;
+  isEnterprise!: boolean;
+
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient, 
+    private tools : ToolsService
+  ) {}
+
+  getEnterprise(): Observable<Enterprise> {
+    const id = this.getById();
+    return this.http.get<Enterprise>(`${this.enterpriseUrl}/${id}`);
+  }
+  
+  getUser(): Observable<User> {
+    const id = this.getById();
+    return this.http.get<User>(`${this.userUrl}/${id}`);
+  }
+  
+  async ngOnInit(): Promise<void> {
+    this.isEnterprise = this.getByUserType() === 'enterprise';
+  
+    if (this.isEnterprise) {
+      this.getEnterprise().subscribe(res => {
+        this.enterprise = res;
+        console.log(this.enterprise);
+      });
+    } else {
+      this.getUser().subscribe(res => {
+        this.user = res;
+        console.log(this.user);
+      });
     }
-
-    // Lógica para enviar o formulário
   }
 
+  getByUserType(): string {
+    let user = '';
+    this.route.paramMap.subscribe(params => {
+      user = params.get('userType') || '';
+    });
+    return user;
+  }
+
+  getById(): number {
+    let id = 0;
+    this.route.paramMap.subscribe(params => {
+      id = Number(params.get('id'));
+    });
+    return id;
+  }
+
+  async submitForm() {
+    const id = this.getById();
+  
+    if (this.isEnterprise) {
+      try {
+        await this.http.put(`${this.enterpriseUrl}/${id}`, this.enterprise).toPromise();
+        this
+      } catch (error) {
+        this.tools.showAlert('Erro ao atualizar dados da empresa:', `${error}`);
+      }
+    } else {
+      try {
+        await this.http.put(`${this.userUrl}/${id}`, this.user).toPromise();
+        this.tools.showAlert('Dados do usuário atualizados com sucesso!', 'sucesso');
+      } catch (error) {
+        this.tools.showAlert('Erro ao atualizar dados do usuário:', `${error}`);
+      }
+    }
+  }
+  getDescription(): string {
+    if (this.isEnterprise) {
+      return this.enterprise.description;
+    } else {
+      return this.user.description;
+    }
+  }
+  
+  description = this.getDescription();
   selectOption(option: string) {
     this.selectedOption = option;
   }
@@ -48,11 +142,5 @@ export class MeuPerfilComponent {
 
   saveLinks() {
     // Lógica para salvar os links do LinkedIn e do GitHub
-    console.log('LinkedIn:', this.linkedinLink);
-    console.log('GitHub:', this.githubLink);
-  }
-
-  openLink(link: string) {
-    // Lógica para abrir o link em uma nova guia
   }
 }
