@@ -19,7 +19,42 @@
       "id": 1
     }
   ],
-  "ads": [],
+  "ads": [
+    {
+      "name": "Desenvolvedor C++",
+      "date": "30/06/2023",
+      "wage": 15000,
+      "description": "Tem que saber node e java",
+      "number": 12,
+      "shift": "Tarde",
+      "enterpriseId": 1,
+      "editMode": false,
+      "id": 1
+    }
+  ],
   "enterprises": [
+    {
+      "name": "Sidia",
+      "street": "manaus",
+      "neigh": "centro",
+      "number": "99",
+      "description": "",
+      "phone": "92993399981",
+      "cnpj": "31315167474838",
+      "nacionality": "br",
+      "email": "sidia@gmail.com",
+      "password": "123",
+      "id": 1
+    }
+  ],
+  "applications": [
+    {
+      "studentId": 1,
+      "studentName": "A",
+      "adId": 1,
+      "adName": "Desenvolvedor C++",
+      "enterpriseId": 1,
+      "id": 1
+    }
   ]
 }

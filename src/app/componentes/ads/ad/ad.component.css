@@ -1,21 +1,27 @@
-.ad-form-field{
+.ad-form-field {
     height: 100%;
-    width:100%;
+    width: 100%;
     position: fixed;
-    top: 0%;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-}
-.ad-form-field-button{
+  }
+  
+  .ad-form-field-button {
     display: flex;
     width: 100%;
     justify-content: center;
-}
-.ad-form-field-button button{
+  }
+  
+  .ad-form-field-button button {
     margin: 1rem;
-}
-.example-full-width{
+  }
+  
+  .example-full-width {
     width: 50%;
-}
+  }
+  

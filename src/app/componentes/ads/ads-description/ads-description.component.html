@@ -1,36 +1,45 @@
+<app-nav-bar></app-nav-bar>
 <div class="container">
-    <div class="ad-content">
-      <div class="ad-info">
-        <div class="company-info">
-          <div class="company-name">
-            Company: {{ currentAd.date }}
+  <div class="ad-title">
+    <label class="ad-title-label">{{ currentAd.name }}</label>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="Detalhes da vaga">
+      <div class="ad-content">
+        <div class="job-details">
+          <div class="info-item">
+            <mat-icon>event</mat-icon> Publicado em: {{ currentAd.date }}
           </div>
-          <div class="company-description">
-            {{ currentAd.description }}
+          <div class="info-item">
+            <mat-icon>attach_money</mat-icon> Salário: {{ currentAd.wage }}
+          </div>
+          <div class="info-item">
+            <mat-icon>access_time</mat-icon> Turno: {{ currentAd.shift }}
+          </div>
+          <div class="info-item">
+            <mat-icon>group</mat-icon> Vagas disponíveis: {{ currentAd.number }}
+          </div>
+          <div class="info-item">
+            <mat-icon>notes</mat-icon> Descrição: {{ currentAd.description }}
           </div>
         </div>
-        <div class="job-details">
-          <div class="ad-content-name">
-            {{ currentAd.name }}
+        <button mat-raised-button color="primary" (click)="createApplication()">Candidatar-se</button>
+      </div>
+    </mat-tab>
+    <mat-tab label="Sobre a empresa">
+      <div class="ad-content">
+        <div class="company-info">
+          <div class="company-name">
+            <mat-label for="">Nome da empresa : {{ currentEnterprise.name }}</mat-label>
+            <mat-label for="">Nacionalidade : {{currentEnterprise.nacionality}}</mat-label>
+            <mat-label for="">Email para contato : {{currentEnterprise.email}}            
+            </mat-label>
           </div>
-          <div class="info-item">
-            <mat-icon>event</mat-icon> Published: {{ currentAd.date }}
-          </div>
-          <div class="info-item">
-            <mat-icon>attach_money</mat-icon> Salary: {{ currentAd.wage }}
-          </div>
-          <div class="info-item">
-            <mat-icon>access_time</mat-icon> Shift: {{ currentAd.shift }}
-          </div>
-          <div class="info-item">
-            <mat-icon>group</mat-icon> Available Positions: {{ currentAd.number }}
-          </div>
-          <div class="ad-description">
-            {{ currentAd.description }}
+          <div class="company-description">
+            {{ currentEnterprise.description }}
           </div>
         </div>
       </div>
-      <button mat-raised-button color="primary">Apply</button>
-    </div>
-  </div>
-  
+    </mat-tab>
+  </mat-tab-group>
+</div>

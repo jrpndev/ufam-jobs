@@ -9,15 +9,13 @@ export class AuthService {
 
   constructor() { }
 
-  login(email: string, password: string): boolean {
-    
-    this.isAuthenticated = true; 
-    return true;
-
+  login() {
+    this.isAuthenticated = true;
   }
 
   logout(): void {
-    this.isAuthenticated = false; // Limpe o estado de autenticação
+    this.isAuthenticated = false;
+    localStorage.removeItem('rememberMe'); 
   }
 
   isAuthenticatedUser(): boolean {

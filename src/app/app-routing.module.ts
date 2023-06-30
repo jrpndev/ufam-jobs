@@ -5,7 +5,7 @@ import { AuthGuard } from './componentes/auth-guard/auth-guard.component';
 const routes: Routes = [
   { path: '', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) },
   { path: 'login', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) },
-  { path: ':userType/:id', loadChildren: () => import('./componentes/home-page/home-page.module').then(m => m.HomePageModule) },
+  { path: ':userType/:id', loadChildren: () => import('./componentes/home-page/home-page.module').then(m => m.HomePageModule), canActivate: [AuthGuard] },
   { path: 'dashboard/:userType/:id', loadChildren: () => import('./componentes/companies/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard] },
   { path: 'register', loadChildren: () => import('./componentes/register/register.module').then(m => m.RegisterModule) },
   { path: 'enterpriseregister', loadChildren: () => import('./componentes/companies/register/register.module').then(m => m.RegisterModule) },

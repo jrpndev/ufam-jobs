@@ -2,43 +2,11 @@
 
 <div class="container">
   <div class="jobs">
-    <div class="job-field">
+    <div class="job-field" *ngFor="let application of applications">
       <div class="item-name">
-        <mat-icon>code</mat-icon> Programmer
+        <mat-icon>Vaga : </mat-icon> {{ application.adName }}
       </div>
-      <div class="salary">
-        <mat-icon>attach_money</mat-icon> 2,900
-      </div>
-      <div class="published">
-        <mat-icon>event</mat-icon> 06/07/2023
-      </div>
-      <button mat-raised-button color="primary">View Job</button>
-    </div>
-
-    <div class="job-field">
-      <div class="item-name">
-        <mat-icon>code</mat-icon> Software Engineer
-      </div>
-      <div class="salary">
-        <mat-icon>attach_money</mat-icon> 2,900
-      </div>
-      <div class="published">
-        <mat-icon>event</mat-icon> 06/07/2023
-      </div>
-      <button mat-raised-button color="primary">View Job</button>
-    </div>
-
-    <div class="job-field">
-      <div class="item-name">
-        <mat-icon>code</mat-icon> Software Engineer
-      </div>
-      <div class="salary">
-        <mat-icon>attach_money</mat-icon> 2,900
-      </div>
-      <div class="published">
-        <mat-icon>event</mat-icon> 06/07/2023
-      </div>
-      <button mat-raised-button color="primary">View Job</button>
+      <button mat-raised-button color="primary">Ver vaga</button>
     </div>
   </div>
 </div>
