@@ -54,7 +54,8 @@
       "adId": 1,
       "adName": "Desenvolvedor C++",
       "enterpriseId": 1,
-      "id": 1
+      "id": 1,
+      "status":"em andamento"
     }
   ]
 }

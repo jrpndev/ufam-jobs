@@ -9,8 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-
-
+import { MatProgressBarModule } from '@angular/material/progress-bar'; // Importe o módulo MatProgressBarModule
 
 @NgModule({
   declarations: [
@@ -20,13 +19,13 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     MinhasVagasRoutingModule,
     NavBarModule,
-    CommonModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressBarModule // Adicione o módulo MatProgressBarModule aqui
   ]
 })
 export class VacanciesModule { }

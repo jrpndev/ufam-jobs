@@ -4,7 +4,13 @@
   <div class="jobs">
     <div class="job-field" *ngFor="let application of applications">
       <div class="item-name">
-        <mat-icon>Vaga : </mat-icon> {{ application.adName }}
+        <mat-icon>Vaga: </mat-icon> {{ application.adName }}
+      </div>
+      <div class="job-progress">
+        <mat-label>
+          Estatus:
+        </mat-label>
+        <mat-progress-bar mode="determinate" [value]="calculateProgress(application.status)"></mat-progress-bar>
       </div>
       <button mat-raised-button color="primary">Ver vaga</button>
     </div>

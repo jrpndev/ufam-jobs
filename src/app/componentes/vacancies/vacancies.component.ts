@@ -17,13 +17,29 @@ export class VacanciesComponent implements OnInit {
     this.studentId = this.readById();
     this.getApplications();
   }
+  
   getApplications() {
     const applicationsUrl = 'http://localhost:3001/applications';
     this.http.get<any[]>(applicationsUrl).subscribe(res => {
-      this.applications = res.filter(app => app.studentId == this.studentId);
-      console.log('Array de Applications:', this.applications); 
+      this.applications = res;
+      console.log('Array de Applications:', this.applications); // Verifique o array filtrado
     });
   }
+  
+  calculateProgress(status: string): number {
+    // Implemente a lógica para calcular o valor da barra de progresso com base no status
+    // Retorne o valor correto da barra de progresso
+
+    // Exemplo de lógica simples:
+    if (status === 'em andamento') {
+      return 50; // 50% de progresso
+    } else if (status === 'concluido') {
+      return 100; // 100% de progresso
+    } else {
+      return 0; // 0% de progresso
+    }
+  }
+
   readById(): any {
     let id;
     this.router.paramMap.subscribe(params => {

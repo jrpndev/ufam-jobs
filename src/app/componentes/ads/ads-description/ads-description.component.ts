@@ -111,7 +111,8 @@ export class AdsDescriptionComponent implements OnInit {
         studentName: user.firstName,
         adId: this.currentAd.id,
         adName: this.currentAd.name,
-        enterpriseId: this.currentEnterprise.id
+        enterpriseId: this.currentEnterprise.id,
+        status : "em andamento"
       };
 
       // Faz uma solicitação POST para criar a inscrição
