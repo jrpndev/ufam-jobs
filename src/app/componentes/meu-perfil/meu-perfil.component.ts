@@ -12,6 +12,8 @@ import { ToolsService } from 'src/app/services/tools.service';
   styleUrls: ['./meu-perfil.component.css']
 })
 export class MeuPerfilComponent implements OnInit {
+
+  currentDescription : string = '';
   enterpriseUrl = 'http://localhost:3001/enterprises';
   userUrl = 'http://localhost:3001/users';
 
@@ -73,19 +75,19 @@ export class MeuPerfilComponent implements OnInit {
   
   async ngOnInit(): Promise<void> {
     this.isEnterprise = this.getByUserType() === 'enterprise';
-  
     if (this.isEnterprise) {
       this.getEnterprise().subscribe(res => {
         this.enterprise = res;
-        console.log(this.enterprise);
+        this.currentDescription = this.enterprise.description;
       });
     } else {
       this.getUser().subscribe(res => {
         this.user = res;
-        console.log(this.user);
+        this.currentDescription = this.user.description;
       });
     }
   }
+  
 
   getByUserType(): string {
     let user = '';
@@ -94,6 +96,30 @@ export class MeuPerfilComponent implements OnInit {
     });
     return user;
   }
+
+  async updateDescription() {
+    const id = this.getById();
+  
+    if (this.isEnterprise) {
+      const updatedEnterprise = { description: this.currentDescription };
+      try {
+        await this.http.patch(`${this.enterpriseUrl}/${id}`, updatedEnterprise).toPromise();
+        this.tools.showAlert('Descrição da empresa atualizada com sucesso!', 'sucesso');
+      } catch (error) {
+        this.tools.showAlert('Erro ao atualizar a descrição da empresa:', `${error}`);
+      }
+    } else {
+      const updatedUser = { description: this.currentDescription };
+      try {
+        await this.http.patch(`${this.userUrl}/${id}`, updatedUser).toPromise();
+        this.tools.showAlert('Descrição do usuário atualizada com sucesso!', 'sucesso');
+      } catch (error) {
+        this.tools.showAlert('Erro ao atualizar a descrição do usuário:', `${error}`);
+      }
+    }
+  }
+  
+  
 
   getById(): number {
     let id = 0;

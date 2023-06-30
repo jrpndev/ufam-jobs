@@ -6,8 +6,6 @@
       <div class="profile-container">
         <div class="profile-image"></div>
         <button class="upload-button" mat-raised-button color="primary">
-          <mat-icon>attach_file</mat-icon>
-          Capture um arquivo
         </button>
       </div>
       <div class="options-list">
@@ -24,9 +22,11 @@
             Use o campo abaixo para descrever melhor seus objetivos profissionais:
           </mat-label>
           <mat-form-field appearance="fill" class="example-full-width">
-            <textarea matInput class="custom-textarea" [(ngModel)]="description"></textarea>
+            <textarea matInput class="custom-textarea" [(ngModel)]="currentDescription"></textarea>
           </mat-form-field>
+          <button mat-raised-button color="primary" (click)="updateDescription()">Atualizar</button>
         </div>
+        
         <div *ngIf="selectedOption === 'Opção 2'" class="content-div">
 
           <form *ngIf="!isEnterprise" (ngSubmit)="submitForm()">

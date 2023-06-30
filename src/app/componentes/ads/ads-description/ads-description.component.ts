@@ -11,6 +11,11 @@ interface User {
   name: string;
 }
 
+interface Application {
+  studentId: number;
+  adId: number;
+}
+
 @Component({
   selector: 'app-ads-description',
   templateUrl: './ads-description.component.html',
@@ -20,6 +25,8 @@ export class AdsDescriptionComponent implements OnInit {
 
   id: number = 0;
   adId: number = 0;
+
+  isEnterprise!: boolean;
 
   baseUrl = 'http://localhost:3001/ads/';
   enterpriseUrl = 'http://localhost:3001/enterprises/';
@@ -58,6 +65,15 @@ export class AdsDescriptionComponent implements OnInit {
     this.adId = this.readByAdId();
     this.getAdInformation();
     this.getEnterpriseById();
+    this.isEnterprise = this.readByUserType() !== 'enterprise';
+  }
+
+  readByUserType(): any {
+    let id;
+    this.router.paramMap.subscribe(params => {
+      id = params.get('userType');
+    });
+    return id;
   }
 
   readById(): any {
@@ -101,7 +117,7 @@ export class AdsDescriptionComponent implements OnInit {
 
   createApplication() {
     // Obtém o ID do usuário e faz uma solicitação GET para obter os dados do usuário
-    const userId = this.id
+    const userId = this.id;
     const userUrl = `${this.userUrl}/${userId}`;
 
     this.http.get<User>(userUrl).subscribe(user => {
@@ -112,20 +128,33 @@ export class AdsDescriptionComponent implements OnInit {
         adId: this.currentAd.id,
         adName: this.currentAd.name,
         enterpriseId: this.currentEnterprise.id,
-        status : "em andamento"
+        status: "em andamento"
       };
 
-      // Faz uma solicitação POST para criar a inscrição
-      this.http.post(this.appUrl, applicationData).subscribe(
-        res => {
-          // Inscrição criada com sucesso
-          this.tools.showAlert('Candidatura enviada', 'Sucesso')
-        },
-        error => {
-          // Ocorreu um erro ao criar a inscrição
-          this.tools.showAlert('Erro ao criar inscrição:', error);
+      // Faz uma solicitação GET para obter as inscrições filtradas
+      const filterUrl = `${this.appUrl}?adId=${applicationData.adId}`;
+      this.http.get<Application[]>(filterUrl).subscribe(applications => {
+        // Verifica se já existe um registro com o studentId igual ao ID do estudante atual
+        const existingApplication = applications.find(app => app.studentId === applicationData.studentId);
+
+        if (existingApplication) {
+          // Já existe uma inscrição com o mesmo studentId
+          this.tools.showAlert('Já existe uma inscrição para este estudante.', 'Erro');
+        } else {
+          // Faz uma solicitação POST para criar a inscrição
+          this.http.post(this.appUrl, applicationData).subscribe(
+            res => {
+              // Inscrição criada com sucesso
+              this.tools.showAlert('Candidatura enviada', 'Sucesso');
+            },
+            error => {
+              // Ocorreu um erro ao criar a inscrição
+              this.tools.showAlert('Erro ao criar inscrição:', error);
+            }
+          );
         }
-      );
+      });
     });
   }
 }
+

@@ -2,12 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
+interface Application {
+  studentId: number;
+  adId: number;
+  status: string;
+}
+
 @Component({
   selector: 'app-vacancies',
   templateUrl: './vacancies.component.html',
   styleUrls: ['./vacancies.component.css']
 })
 export class VacanciesComponent implements OnInit {
+
   studentId: number = 0;
   applications: any[] = [];
 
@@ -17,15 +24,17 @@ export class VacanciesComponent implements OnInit {
     this.studentId = this.readById();
     this.getApplications();
   }
-  
+
   getApplications() {
     const applicationsUrl = 'http://localhost:3001/applications';
-    this.http.get<any[]>(applicationsUrl).subscribe(res => {
+    const filterUrl = `${applicationsUrl}?studentId=${this.studentId}`;
+
+    this.http.get<Application[]>(filterUrl).subscribe(res => {
       this.applications = res;
       console.log('Array de Applications:', this.applications); // Verifique o array filtrado
     });
   }
-  
+
   calculateProgress(status: string): number {
     // Implemente a lógica para calcular o valor da barra de progresso com base no status
     // Retorne o valor correto da barra de progresso
@@ -43,7 +52,7 @@ export class VacanciesComponent implements OnInit {
   readById(): any {
     let id;
     this.router.paramMap.subscribe(params => {
-      id = params.get('id');
+      id = Number(params.get('id'));
     });
     return id;
   }

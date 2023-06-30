@@ -23,7 +23,7 @@
             <mat-icon>notes</mat-icon> Descrição: {{ currentAd.description }}
           </div>
         </div>
-        <button mat-raised-button color="primary" (click)="createApplication()">Candidatar-se</button>
+        <button mat-raised-button color="primary" (click)="createApplication()" *ngIf="isEnterprise">Candidatar-se</button>
       </div>
     </mat-tab>
     <mat-tab label="Sobre a empresa">

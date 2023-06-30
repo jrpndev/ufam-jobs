@@ -9,10 +9,10 @@
       <div class="job-progress">
         <mat-label>
           Estatus:
+          {{application.status}}
         </mat-label>
         <mat-progress-bar mode="determinate" [value]="calculateProgress(application.status)"></mat-progress-bar>
       </div>
-      <button mat-raised-button color="primary">Ver vaga</button>
     </div>
   </div>
 </div>

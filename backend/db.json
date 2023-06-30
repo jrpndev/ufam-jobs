@@ -9,7 +9,7 @@
       "cep": "61",
       "number": "161",
       "course": "A",
-      "description": "",
+      "description": "Atualizada",
       "phone": "141241",
       "cpf": "43",
       "gender": "M",
@@ -17,6 +17,23 @@
       "date": null,
       "password": "A",
       "id": 1
+    },
+    {
+      "firstName": "José",
+      "surname": "Rui",
+      "mat": "A",
+      "street": "A",
+      "neigh": "A",
+      "cep": "A",
+      "number": "A",
+      "course": "Engenharia",
+      "description": "",
+      "phone": "A",
+      "cpf": "A",
+      "gender": "F",
+      "email": "jrui797@gmail.com",
+      "password": "joserui7977",
+      "id": 2
     }
   ],
   "ads": [
@@ -55,7 +72,16 @@
       "adName": "Desenvolvedor C++",
       "enterpriseId": 1,
       "id": 1,
-      "status":"em andamento"
+      "status": "em andamento"
+    },
+    {
+      "studentId": 2,
+      "studentName": "José",
+      "adId": 1,
+      "adName": "Desenvolvedor C++",
+      "enterpriseId": 1,
+      "status": "em andamento",
+      "id": 2
     }
   ]
 }
